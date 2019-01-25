@@ -55,21 +55,19 @@ public class EnemyBehaviour : MonoBehaviour
         {
             _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
             this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
-
-            //Check if Waypoint is reached
-            Vector3 vecPosDiff = this.gameObject.transform.position - SpawnPoint.transform.position;
-            if (Math.Abs(vecPosDiff.x) < 0.1f && Math.Abs(vecPosDiff.y) < 0.1f && Math.Abs(vecPosDiff.z) < 0.1f)
-            {
-                if (this.SpawnPoint.HasWayPoint())
-                {
-                    this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
-                }
-            }
         }
 
         SetAnimation();
 
         //TODO: Triggers for traps
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("WayPoint") && this.SpawnPoint.HasWayPoint())
+        {
+            this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
+        }
     }
 
     void SetAnimation()
