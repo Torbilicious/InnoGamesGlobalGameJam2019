@@ -16,16 +16,29 @@ public class EnemyBehaviour : MonoBehaviour
     public float Speed = 1.0f;
 
     public float SpeedMax = 2.0f;
-
-    private float _currentSpeed = 1.0f;
     
-    // Start is called before the first frame update
+    private float _currentSpeed = 1.0f;
+
+    private int _currentSprite;
+
+    public Animation2D AnimationRun;
+    public Animation2D AnimationClimb;
+
+    private SpriteRenderer _spr;
+    private Animation2D _animationSelected;
+
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
-        
+        _spr = GetComponent<SpriteRenderer>();
+        _animationSelected = AnimationRun;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// 
+    /// </summary>
     void Update()
     {
         //Item Drops
@@ -38,21 +51,30 @@ public class EnemyBehaviour : MonoBehaviour
 		}
 
         //Room Movement
-        _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
-        this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
-
-        //Check if Waypoint is reached
-        Vector3 vecPosDiff = this.gameObject.transform.position - SpawnPoint.transform.position;
-        if (Math.Abs(vecPosDiff.x) < 0.1f && Math.Abs(vecPosDiff.y) < 0.1f && Math.Abs(vecPosDiff.z) < 0.1f)
+        if (this.SpawnPoint != null)
         {
-            if (this.SpawnPoint.HasWayPoint())
+            _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
+
+            //Check if Waypoint is reached
+            Vector3 vecPosDiff = this.gameObject.transform.position - SpawnPoint.transform.position;
+            if (Math.Abs(vecPosDiff.x) < 0.1f && Math.Abs(vecPosDiff.y) < 0.1f && Math.Abs(vecPosDiff.z) < 0.1f)
             {
-                this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
+                if (this.SpawnPoint.HasWayPoint())
+                {
+                    this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
+                }
             }
         }
 
-        //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
+        SetAnimation();
 
         //TODO: Triggers for traps
+    }
+
+    void SetAnimation()
+    {
+        //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
+        _spr.sprite = _animationSelected.GetNext();
     }
 }
