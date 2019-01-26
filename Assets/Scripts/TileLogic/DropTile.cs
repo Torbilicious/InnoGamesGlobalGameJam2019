@@ -44,7 +44,7 @@ public class DropTile : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
-        if (isDragging && !Input.GetMouseButton(0))
+        if ( (isDragging && !Input.GetMouseButton(0)))
         {
             if (_lastCollider != null && Collides())
             {
