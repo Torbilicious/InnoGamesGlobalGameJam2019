@@ -65,12 +65,22 @@ public class DropTile : MonoBehaviour
         }
     }
 
-    public DropTile getRandomNextTile() {
-        if(existingTiles.Count > 0) {
-            System.Random rnd = new System.Random();
-            int index = rnd.Next(0, existingTiles.Count);
-            return existingTiles[index];
+    public DropTile getRandomNextTile(DropTile ignoreTile) {
+        
+        List<DropTile> tileList = new List<DropTile>();
+
+        existingTiles.ForEach((item) => // get all tiles except the old one
+        {
+            if(item != ignoreTile)
+                tileList.Add(item);
+        });
+
+        if(tileList.Count == 0) { // if no options left, add the old tile back
+            tileList.Add(ignoreTile);
         }
-        return null;
+
+        System.Random rnd = new System.Random(); // choose a random tile
+        int index = rnd.Next(0, tileList.Count);
+        return tileList[index];
     }
 }

@@ -38,7 +38,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _spr = GetComponent<SpriteRenderer>();
         _animationSelected = AnimationRun;
+
         transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        tileDestination = startTile.getRandomNextTile(startTile);
     }
 
     /// <summary>
@@ -47,25 +49,22 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
+  
+        // move to next tile
+        Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        float distance = (targetPos - transform.position).magnitude;
+        Vector3 stepVelocity = Vector3.Normalize(targetPos - transform.position) * _currentSpeed;
 
-        if(tileDestination == null) 
-        {
-            tileDestination = startTile.getRandomNextTile() ?? startTile;
-        } else { // check distance
-            Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
-            float distance = (targetPos - transform.position).magnitude;
-            Vector3 stepVelocity = Vector3.Normalize(targetPos - transform.position) * _currentSpeed;
+        if(distance < 0.01f) {
+            transform.position = targetPos;
 
-            Debug.Log(distance);
-            if(distance < 0.01f) {
-                transform.position = targetPos;
-
-                startTile = tileDestination;
-                tileDestination = null;
-            } else {
-                transform.position += stepVelocity;
-            }
+            DropTile nextStartTile = tileDestination;
+            tileDestination = tileDestination.getRandomNextTile(startTile);  
+            startTile = nextStartTile;
+        } else {
+            transform.position += stepVelocity;
         }
+
 
         //Item Drops
         foreach(EnemyItem item in Items)

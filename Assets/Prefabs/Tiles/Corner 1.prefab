@@ -141,4 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa174733be9fea4bad70c7ed3427898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextTileTop: {fileID: 0}
+  nextTileRight: {fileID: 0}
+  nextTileBottom: {fileID: 0}
+  nextTileLeft: {fileID: 0}
   SpawnableItem: {fileID: 0}
