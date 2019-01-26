@@ -1,31 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-    public float DragSpeed = 2;
-    private Vector3 _dragOrigin;
+    public float DragSpeed = 17;
     private const int _mouseButton = 1;
 
+    public Rect WorldBounds = new Rect(-5, -5, 10, 10);
+
     private Vector3 _velocity;
- 
-    void Update()
+
+    private void Update()
     {
-        if (!Input.GetMouseButton(_mouseButton))
-        {
-            return;
-        }
-        else if (Input.GetMouseButtonDown(_mouseButton))
-        {
-            _dragOrigin = Input.mousePosition;
-        }
-        else
-        {
-            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _dragOrigin);
-            _dragOrigin = Input.mousePosition;
-            Vector3 move = Vector3.SmoothDamp(pos, new Vector3(pos.x * -DragSpeed * 200, pos.y * -DragSpeed * 200, 0), ref _velocity, 0.5f);
-            transform.Translate(move, Space.World);
-        }
+        if (!Input.GetMouseButton(_mouseButton)) return;
+        transform.position += new Vector3(Input.GetAxis("Mouse X") * Time.deltaTime * -DragSpeed, Input.GetAxis("Mouse Y") * Time.deltaTime * -DragSpeed, 0f);
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, WorldBounds.xMin, WorldBounds.xMax),
+            Mathf.Clamp(transform.position.y, WorldBounds.yMin, WorldBounds.yMax),
+            transform.position.z);
     }
 }
