@@ -7,14 +7,14 @@ public class TextHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
 
     public Text theText;
-
+    Color newColor = new Color(1f, 0.6f, 0.5f, 1f);
     public void OnPointerEnter(PointerEventData eventData)
     {
-        theText.color = Color.white; //Or however you do your color
+        theText.color = newColor; //Or however you do your color
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        theText.color = Color.grey; //Or however you do your color
-    }
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            theText.color = Color.white; //Or however you do your color
+        }
 }
