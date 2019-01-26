@@ -19,8 +19,7 @@ public class SpawnableItem : MonoBehaviour
     {
         var tileToSpawn = currentTile;
 
-        var tile = Instantiate(tileToSpawn, gameObject.transform);
-
+        var tile = Instantiate(tileToSpawn, gameObject.transform, true);
         tile.transform.parent = null;
         tile.GetComponent<DropTile>().SpawnableItem = this;
 
@@ -44,6 +43,7 @@ public class SpawnableItem : MonoBehaviour
     private void applySpriteFromMimickedTile()
     {
         GetComponent<SpriteRenderer>().sprite = currentTile.GetComponent<SpriteRenderer>().sprite;
+        transform.rotation = currentTile.transform.rotation;
     }
 
     private GameObject getRandomTile()
