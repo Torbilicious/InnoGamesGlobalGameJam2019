@@ -22,7 +22,7 @@ public class Animation2D : MonoBehaviour
     public Sprite GetNext()
     {
         _spriteStep += Time.deltaTime;
-        if (_spriteStep > RunSpeed)
+        if (_spriteStep > 1 / RunSpeed)
         {
             _spriteStep = 0;
 
