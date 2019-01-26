@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
+     
                 Resume();
             }
             else
@@ -34,10 +35,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        PauseMenuBackground.SetActive(false);
-        PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        PauseMenuBackground.SetActive(false);
+        PauseMenuUI.SetActive(false);
+        
     }
 
     public void LoadMenu()
@@ -47,10 +49,11 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        PauseMenuBackground.SetActive(true);
-        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        PauseMenuBackground.SetActive(true);
+        PauseMenuUI.SetActive(true);
+        
     }
 
     public void QuitGame()
