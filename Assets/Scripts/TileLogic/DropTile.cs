@@ -5,7 +5,7 @@ using static ResetCause;
 
 public class DropTile : MonoBehaviour
 {
-    bool isDragging = true;
+    public bool isDragging = false;
 
     public DropTile nextTileTop;
     public DropTile nextTileRight;

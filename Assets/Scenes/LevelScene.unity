@@ -377,6 +377,11 @@ PrefabInstance:
       propertyPath: nextTileBottom
       value: 
       objectReference: {fileID: 1151868514}
+    - target: {fileID: 5993919451182163156, guid: 4ecc20e795921463fb7ad48ff6cd4a72,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ecc20e795921463fb7ad48ff6cd4a72, type: 3}
 --- !u!4 &302154209 stripped
@@ -560,6 +565,11 @@ PrefabInstance:
       propertyPath: nextTileBottom
       value: 
       objectReference: {fileID: 1469136174}
+    - target: {fileID: 5993919451182163156, guid: 4ecc20e795921463fb7ad48ff6cd4a72,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ecc20e795921463fb7ad48ff6cd4a72, type: 3}
 --- !u!4 &543951902 stripped
@@ -859,6 +869,11 @@ PrefabInstance:
       propertyPath: startTile
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5547743201495557972, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
+        type: 3}
+      propertyPath: startTile
+      value: 
+      objectReference: {fileID: 1244444875}
     - target: {fileID: 8390367143219542719, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1049,6 +1064,11 @@ PrefabInstance:
       propertyPath: nextTileRight
       value: 
       objectReference: {fileID: 1637086795}
+    - target: {fileID: 2673747182135065854, guid: ccbd5c4cc5d264965a66a7152caf0a56,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbd5c4cc5d264965a66a7152caf0a56, type: 3}
 --- !u!4 &828159219 stripped
@@ -1279,6 +1299,11 @@ PrefabInstance:
       propertyPath: nextTileLeft
       value: 
       objectReference: {fileID: 1151868514}
+    - target: {fileID: 2673747182135065854, guid: ccbd5c4cc5d264965a66a7152caf0a56,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbd5c4cc5d264965a66a7152caf0a56, type: 3}
 --- !u!4 &1084559945 stripped
@@ -1382,6 +1407,11 @@ PrefabInstance:
       propertyPath: nextTileRight
       value: 
       objectReference: {fileID: 1084559946}
+    - target: {fileID: 6672254427992622382, guid: 74058bfd8e036472d958b427b7943696,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74058bfd8e036472d958b427b7943696, type: 3}
 --- !u!4 &1151868513 stripped
@@ -1479,6 +1509,11 @@ PrefabInstance:
       propertyPath: nextTileTop
       value: 
       objectReference: {fileID: 2097628535}
+    - target: {fileID: 1590627238031767320, guid: 3010e8308885f4e309d073559df436b9,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3010e8308885f4e309d073559df436b9, type: 3}
 --- !u!4 &1244444874 stripped
@@ -1667,6 +1702,11 @@ PrefabInstance:
       propertyPath: nextTileTop
       value: 
       objectReference: {fileID: 543951903}
+    - target: {fileID: 288371727146994913, guid: cc01046d8ab5f44ee86575ea87b8f8d1,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc01046d8ab5f44ee86575ea87b8f8d1, type: 3}
 --- !u!4 &1469136173 stripped
@@ -1845,6 +1885,11 @@ PrefabInstance:
       propertyPath: nextTileRight
       value: 
       objectReference: {fileID: 543951903}
+    - target: {fileID: 2673747182135065854, guid: ccbd5c4cc5d264965a66a7152caf0a56,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbd5c4cc5d264965a66a7152caf0a56, type: 3}
 --- !u!4 &1637086794 stripped
@@ -2048,6 +2093,11 @@ PrefabInstance:
       propertyPath: nextTileRight
       value: 
       objectReference: {fileID: 302154210}
+    - target: {fileID: 5993919451182163156, guid: 4ecc20e795921463fb7ad48ff6cd4a72,
+        type: 3}
+      propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ecc20e795921463fb7ad48ff6cd4a72, type: 3}
 --- !u!4 &2097628534 stripped
