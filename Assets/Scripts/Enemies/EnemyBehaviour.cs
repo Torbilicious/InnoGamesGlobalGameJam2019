@@ -41,7 +41,7 @@ public class EnemyBehaviour : MonoBehaviour
         _spr = GetComponent<SpriteRenderer>();
         _animationSelected = AnimationRun;
 
-        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
+        //transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
     }
 
     /// <summary>
@@ -64,7 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
 
-        Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        Vector3 targetPos = tileDestination.transform.position;// + new Vector3(-0.25f, 0.25f, 0.0f);
         targetPos.z = transform.position.z;
 
         // move to next tile
