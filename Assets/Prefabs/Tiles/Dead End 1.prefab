@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2212712084031568797}
   - component: {fileID: 2925244033336241697}
   m_Layer: 0
-  m_Name: Dead End
+  m_Name: Dead End 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,3 +146,7 @@ MonoBehaviour:
   nextTileBottom: {fileID: 0}
   nextTileLeft: {fileID: 0}
   SpawnableItem: {fileID: 0}
+  Left: 0
+  Right: 0
+  Top: 0
+  Bottom: 1
