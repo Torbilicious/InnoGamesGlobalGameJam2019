@@ -14,8 +14,6 @@ public class DropTile : MonoBehaviour
     public DropTile nextTileBottom;
     public DropTile nextTileLeft;
 
-    private List<DropTile> existingTiles = new List<DropTile>();
-
     private Collider2D _lastCollider;
 
     public SpawnableItem SpawnableItem;
@@ -27,10 +25,6 @@ public class DropTile : MonoBehaviour
 
     void Start()
     {
-        if(nextTileTop)existingTiles.Add(nextTileTop);
-        if(nextTileRight)existingTiles.Add(nextTileRight);
-        if(nextTileBottom)existingTiles.Add(nextTileBottom);
-        if(nextTileLeft)existingTiles.Add(nextTileLeft);
     }
 
     // Update is called once per frame
@@ -49,7 +43,10 @@ public class DropTile : MonoBehaviour
                 this.transform.position = _lastCollider.transform.position;
                 Destroy(_lastCollider.gameObject);
                 isDragging = false;
-                SpawnableItem.reset(PLACED);
+                if (SpawnableItem != null)
+                {
+                    SpawnableItem.reset(PLACED);
+                }
                 _droppedTiles.Add(this.transform.position, this);
                 ConnectTiles(true);
             }
@@ -77,15 +74,13 @@ public class DropTile : MonoBehaviour
     public DropTile getRandomNextTile(DropTile ignoreTile) {
         
         List<DropTile> tileList = new List<DropTile>();
+        if (nextTileLeft != null && nextTileLeft != ignoreTile) tileList.Add(nextTileLeft);
+        if (nextTileRight != null && nextTileRight != ignoreTile) tileList.Add(nextTileRight);
+        if (nextTileTop != null && nextTileTop != ignoreTile) tileList.Add(nextTileTop);
+        if (nextTileBottom != null && nextTileBottom != ignoreTile) tileList.Add(nextTileBottom);
 
-        existingTiles.ForEach((item) => // get all tiles except the old one
-        {
-            if(item != ignoreTile)
-                tileList.Add(item);
-        });
-
-        if(tileList.Count == 0) { // if no options left, add the old tile back
-            tileList.Add(ignoreTile);
+        if(tileList.Count == 0) {
+            tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
         }
 
         System.Random rnd = new System.Random(); // choose a random tile
