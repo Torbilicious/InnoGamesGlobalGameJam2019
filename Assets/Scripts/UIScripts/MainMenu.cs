@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
             Time.timeScale = 1f;
             PauseMenu.GameIsPaused = false;
         }
-        SceneManager.LoadScene("HouseScene");
+        SceneManager.LoadScene("LevelScene");
     }
 
     public void LoadCredits()
