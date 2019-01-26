@@ -64,7 +64,7 @@ public class DropTile : MonoBehaviour
         {
             //Input.GetMouseButton(0)
 
-            if (other.CompareTag("Tile"))
+            if (other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked)
             {
                 _lastCollider = other;
             }
