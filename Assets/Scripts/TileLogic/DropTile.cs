@@ -24,6 +24,8 @@ public class DropTile : MonoBehaviour
     public bool Top;
     public bool Bottom;
 
+    private bool mouseDown;
+
     void Start()
     {
         if(isPreset) 
@@ -40,10 +42,9 @@ public class DropTile : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
-
         if (isDragging && !Input.GetMouseButton(0))
         {
-            if (_lastCollider != null && _lastCollider.bounds.Intersects(GetComponent<Collider2D>().bounds))
+            if (_lastCollider != null && Collides())
             {
                 this.transform.position = _lastCollider.transform.position;
                 Destroy(_lastCollider.gameObject);
@@ -61,7 +62,25 @@ public class DropTile : MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButton(0) && !mouseDown && !isDragging)
+        {
+            Vector3 stw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Rect rect = new Rect(gameObject.transform.position - gameObject.transform.localScale / 2, gameObject.transform.localScale);
+            if (rect.Contains(stw)) OnManualMouseDown();
+            mouseDown = true;
+        }
+        else if(!Input.GetMouseButton(0) && mouseDown)
+        {
+            mouseDown = false;
+        }
         ConnectTiles(false);
+    }
+
+    private bool Collides()
+    {
+        Vector3 center = GetComponent<Renderer>().bounds.center;
+        Vector3 diff = center - _lastCollider.gameObject.transform.position;
+        return diff.x < 0.3f && diff.y < 0.3f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -69,7 +88,7 @@ public class DropTile : MonoBehaviour
         if (isDragging)
         {
             //Input.GetMouseButton(0)
-
+            //Debug.Log(other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked);
             if (other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked)
             {
                 _lastCollider = other;
@@ -77,7 +96,7 @@ public class DropTile : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void OnManualMouseDown()
     {
         bool left = false, right = false, top = false, bottom = false;
         this.transform.Rotate(0, 0, -90);
@@ -101,7 +120,7 @@ public class DropTile : MonoBehaviour
         if (nextTileBottom != null && nextTileBottom != ignoreTile) tileList.Add(nextTileBottom);
 
         if(tileList.Count == 0) {
-            tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
+            return null;// tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
         }
 
         System.Random rnd = new System.Random(); // choose a random tile
