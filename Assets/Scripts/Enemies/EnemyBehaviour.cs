@@ -70,13 +70,15 @@ public class EnemyBehaviour : MonoBehaviour
         if( (targetPos - transform.position).magnitude < 0.01f)
         {
             transform.position = targetPos;
-
+            tileDestination.AddModifiers(this);
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);
             if(tileDestination == null)
             {
                 Die();
+                return;
             }
+            
             startTile = nextStartTile;
             nextStartTile.CanRotate = false;
         }
@@ -104,30 +106,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         //TODO: Triggers for traps
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //Waypoint Update
-        /*
-        if (other.CompareTag("WayPoint") && this.SpawnPoint.HasWayPoint())
-        {
-            this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
-        }*/
-
-        //Trap handler
-        if(other.CompareTag("Trap"))
-        {
-            /*TrapItem trapItem = other.gameObject.GetComponent<TrapItem>();
-            if(trapItem == null)
-            {
-                Debug.Log("Trap hat keine Item-Funktion zugewiesen bekommen");
-            }
-            this.FearLevel += trapItem.Fear;
-            _trapItem = trapItem;
-            //activate animation
-            */
-        }
     }
 
     void SetAnimation()
