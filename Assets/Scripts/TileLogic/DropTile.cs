@@ -71,6 +71,26 @@ public class DropTile : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        bool left = false, right = false, top = false, bottom = false;
+        this.transform.Rotate(0, 0, -90);
+        if(this.Left) { top = true; }
+        if (this.Top) { right = true; }
+        if(this.Right){ bottom = true; }
+        if (this.Bottom) { left = true; }
+
+        this.Left = left;
+        this.Right = right;
+        this.Top = top;
+        this.Bottom = bottom;
+
+        foreach(DropTile tile in _droppedTiles.Values)
+        {
+            tile.ConnectTiles(false);
+        }
+    }
+
     public DropTile GetRandomNextTile(DropTile ignoreTile) {
         
         List<DropTile> tileList = new List<DropTile>();
@@ -90,6 +110,11 @@ public class DropTile : MonoBehaviour
 
     public void ConnectTiles(bool connectNeighbours)
     {
+        nextTileTop = null;
+        nextTileBottom = null;
+        nextTileLeft = null;
+        nextTileRight = null;
+
         Vector3 euler = this.transform.eulerAngles;
         this.transform.Rotate(-euler);
 
