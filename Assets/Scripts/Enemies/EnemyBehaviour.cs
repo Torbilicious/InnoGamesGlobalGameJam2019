@@ -21,7 +21,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private int _currentSprite;
 
-    private LevelTile tileDestination;
+    private DropTile tileDestination;
 
     public Animation2D AnimationRun;
     public Animation2D AnimationClimb;
@@ -46,12 +46,25 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
+
         if(tileDestination == null) 
         {
-            // get next tile   
-           
+            tileDestination = startTile.getRandomNextTile() ?? startTile;
         } else { // check distance
+            Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+            float distance = (targetPos - transform.position).magnitude;
+            Vector3 stepVelocity = Vector3.Normalize(targetPos - transform.position) * _currentSpeed;
 
+            Debug.Log(distance);
+            if(distance < 0.01f) {
+                transform.position = targetPos;
+
+                startTile = tileDestination;
+                tileDestination = null;
+            } else {
+                transform.position += stepVelocity;
+            }
         }
 
         //Item Drops
@@ -62,14 +75,6 @@ public class EnemyBehaviour : MonoBehaviour
                 item.DropItem(this.gameObject.transform.position);
 			}
 		}
-
-        //Room Movement
-        /*
-        if (this.SpawnPoint != null)
-        {
-            _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
-            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
-        }*/
 
         SetAnimation();
 

@@ -12,7 +12,7 @@ public class DropTile : MonoBehaviour
     public DropTile nextTileBottom;
     public DropTile nextTileLeft;
 
-    private List<DropTile> existingTiles;
+    private List<DropTile> existingTiles = new List<DropTile>();
 
     private Collider2D _lastCollider;
 
@@ -28,9 +28,7 @@ public class DropTile : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        Debug.Log(isDragging);
-        
+    {        
         if (isDragging)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -68,7 +66,11 @@ public class DropTile : MonoBehaviour
     }
 
     public DropTile getRandomNextTile() {
-        System.Random rnd = new System.Random();
+        if(existingTiles.Count > 0) {
+            System.Random rnd = new System.Random();
+            int index = rnd.Next(0, existingTiles.Count);
+            return existingTiles[index];
+        }
         return null;
     }
 }
