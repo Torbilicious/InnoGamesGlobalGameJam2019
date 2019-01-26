@@ -130,6 +130,8 @@ public class DropTile : MonoBehaviour
 
     public void AddModifiers(EnemyBehaviour behaviour)
     {
+        if (_connectedTile == null) return;
+
         behaviour.FearLevel *= _connectedTile.SpeedModifier;
         behaviour.FearLevel = Math.Max(behaviour.FearLevel, behaviour.FearLevelMax);
 
