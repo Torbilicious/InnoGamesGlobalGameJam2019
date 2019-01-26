@@ -6,7 +6,12 @@ using UnityEngine;
 public class LevelTile : MonoBehaviour
 {
     public bool IsBlocked = false;
+
+    public float dropSoundVolume = 2.5f;
+
     public GameObject Block;
+
+    public AudioClip dropSound;
 
     void Start()
     {
@@ -25,5 +30,10 @@ public class LevelTile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
+    }
+
+    public void HandleTileSet()
+    {
+        AudioSource.PlayClipAtPoint(dropSound, transform.position, dropSoundVolume);
     }
 }

@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147392758470349165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.25, z: 0}
+  m_LocalPosition: {x: -4.07, y: -0.75, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3379512351914415443}
@@ -74,13 +74,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e9ab39c38e252c94da7cec00919b7508, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300030, guid: 28d95a9f2301aff44a3d134287323b41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.44, y: 0.53555554}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,9 +102,9 @@ BoxCollider2D:
   m_Offset: {x: 0.25, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 1}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.44, y: 0.53555554}
+    newSize: {x: 0.44, y: 0.53555554}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -128,9 +128,9 @@ BoxCollider2D:
   m_Offset: {x: 0.25, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 1}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.44, y: 0.53555554}
+    newSize: {x: 0.44, y: 0.53555554}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   Items: []
   FearLevel: 0
   FearLevelMax: 100
-  Speed: 1
+  Speed: 0.5
   SpeedMax: 2
   AnimationRun: {fileID: 7108552162280229393}
   AnimationClimb: {fileID: 4938487777663616565}
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: testSprite01
-  RunSpeed: 1
+  Sprite: walk_animation
+  RunSpeed: 40
 --- !u!114 &4938487777663616565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: testSprite01
-  RunSpeed: 1
+  Sprite: walk_animation
+  RunSpeed: 40
 --- !u!1 &2628576382940089879
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using static ResetCause;
 
 public class DropTile : MonoBehaviour
 {
-    private static Dictionary<Vector3, DropTile> _droppedTiles = new Dictionary<Vector3, DropTile>();
+    private static Dictionary<Vector2, DropTile> _droppedTiles = new Dictionary<Vector2, DropTile>();
 
     public bool isDragging = false;
     public bool isPreset = false;
@@ -23,12 +23,16 @@ public class DropTile : MonoBehaviour
     public bool Right;
     public bool Top;
     public bool Bottom;
+    public AudioClip rotateSound;
+    public float rotateSoundVolume = 2.5f;
+
+    private bool mouseDown;
 
     void Start()
     {
         if(isPreset) 
         {
-            _droppedTiles.Add(this.transform.position, this);
+           _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
         }
     }
 
@@ -40,11 +44,11 @@ public class DropTile : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
-
         if (isDragging && !Input.GetMouseButton(0))
         {
-            if (_lastCollider != null && _lastCollider.bounds.Intersects(GetComponent<Collider2D>().bounds))
+            if (_lastCollider != null && Collides())
             {
+                _lastCollider.GetComponent<LevelTile>().HandleTileSet();
                 this.transform.position = _lastCollider.transform.position;
                 Destroy(_lastCollider.gameObject);
                 isDragging = false;
@@ -52,7 +56,7 @@ public class DropTile : MonoBehaviour
                 {
                     SpawnableItem.Reset(PLACED);
                 }
-                _droppedTiles.Add(this.transform.position, this);
+                _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
             }
             else
             {
@@ -61,7 +65,25 @@ public class DropTile : MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButton(0) && !mouseDown && !isDragging)
+        {
+            Vector3 stw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Rect rect = new Rect(gameObject.transform.position - gameObject.transform.localScale / 2, gameObject.transform.localScale);
+            if (rect.Contains(stw)) OnManualMouseDown();
+            mouseDown = true;
+        }
+        else if(!Input.GetMouseButton(0) && mouseDown)
+        {
+            mouseDown = false;
+        }
         ConnectTiles(false);
+    }
+
+    private bool Collides()
+    {
+        Vector3 center = GetComponent<Renderer>().bounds.center;
+        Vector3 diff = center - _lastCollider.gameObject.transform.position;
+        return diff.x < 0.3f && diff.y < 0.3f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -69,7 +91,7 @@ public class DropTile : MonoBehaviour
         if (isDragging)
         {
             //Input.GetMouseButton(0)
-
+            //Debug.Log(other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked);
             if (other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked)
             {
                 _lastCollider = other;
@@ -77,8 +99,11 @@ public class DropTile : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void OnManualMouseDown()
     {
+        if(rotateSound)
+            AudioSource.PlayClipAtPoint(rotateSound, transform.position, rotateSoundVolume);
+
         bool left = false, right = false, top = false, bottom = false;
         this.transform.Rotate(0, 0, -90);
         if(this.Left) { top = true; }
@@ -101,7 +126,7 @@ public class DropTile : MonoBehaviour
         if (nextTileBottom != null && nextTileBottom != ignoreTile) tileList.Add(nextTileBottom);
 
         if(tileList.Count == 0) {
-            tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
+            return null;// tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
         }
 
         System.Random rnd = new System.Random(); // choose a random tile
@@ -119,10 +144,11 @@ public class DropTile : MonoBehaviour
         Vector3 euler = this.transform.eulerAngles;
         this.transform.Rotate(-euler);
 
-        Vector3 left = this.transform.position + Vector3.left;
-        Vector3 right = this.transform.position + Vector3.right;
-        Vector3 top = this.transform.position + Vector3.up;
-        Vector3 bottom = this.transform.position + Vector3.down;
+        Vector2 posNoZ = new Vector2(this.transform.position.x, this.transform.position.y);
+        Vector2 left = posNoZ + Vector2.left;
+        Vector2 right = posNoZ + Vector2.right;
+        Vector2 top = posNoZ + Vector2.up;
+        Vector2 bottom = posNoZ + Vector2.down;
 
         if (this.Left && _droppedTiles.ContainsKey(left) && _droppedTiles[left].Right)
         {
