@@ -111,7 +111,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void winLevel()
     {
-        Debug.Log("WIN");
         SceneManager.LoadScene("WinningScreen");
     }
 

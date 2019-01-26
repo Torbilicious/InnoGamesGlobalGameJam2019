@@ -9,7 +9,12 @@ public class Win : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("Level " + (++GameState.levelNum));
+        if(GameState.nexLevel >= 0) 
+        {
+            SceneManager.LoadScene("Level " + GameState.nexLevel);
+        }else{
+            SceneManager.LoadScene("Credits");
+        }
     }
 
     public void BackToMenu()

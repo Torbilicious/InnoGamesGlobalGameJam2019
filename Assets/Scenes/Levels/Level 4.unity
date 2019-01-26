@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2f782b82b2b0245be545a917a8ead1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 5
 --- !u!1001 &989012731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1689,6 +1690,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
+        type: 3}
+      propertyPath: IsBlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
+        type: 3}
+      propertyPath: PortalTo
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6008923770096672455, guid: a7bee26c21546734f8db37701889ada9,
         type: 3}
       propertyPath: m_Color.r
@@ -1703,16 +1714,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
-        type: 3}
-      propertyPath: IsBlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
-        type: 3}
-      propertyPath: PortalTo
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7bee26c21546734f8db37701889ada9, type: 3}
@@ -1959,6 +1960,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
+        type: 3}
+      propertyPath: IsBlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
+        type: 3}
+      propertyPath: SpeedModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6008923770096672455, guid: a7bee26c21546734f8db37701889ada9,
         type: 3}
       propertyPath: m_Color.r
@@ -1972,16 +1983,6 @@ PrefabInstance:
     - target: {fileID: 6008923770096672455, guid: a7bee26c21546734f8db37701889ada9,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
-        type: 3}
-      propertyPath: IsBlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6008923770096672452, guid: a7bee26c21546734f8db37701889ada9,
-        type: 3}
-      propertyPath: SpeedModifier
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
