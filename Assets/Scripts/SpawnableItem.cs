@@ -11,8 +11,8 @@ public class SpawnableItem : MonoBehaviour
 
     private void Start()
     {
-        currentTile = getRandomTile();
-        applySpriteFromMimickedTile();
+        currentTile = GetRandomTile();
+        ApplySpriteFromMimickedTile();
     }
 
     private void OnMouseDown()
@@ -27,27 +27,27 @@ public class SpawnableItem : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void reset(ResetCause cause)
+    public void Reset(ResetCause cause)
     {
         switch (cause)
         {
             case PLACED:
                 //TODO maybe rotate TileToSpawn
-                currentTile = getRandomTile();
-                applySpriteFromMimickedTile();
+                currentTile = GetRandomTile();
+                ApplySpriteFromMimickedTile();
                 break;
         }
 
         gameObject.SetActive(true);
     }
 
-    private void applySpriteFromMimickedTile()
+    private void ApplySpriteFromMimickedTile()
     {
         GetComponent<SpriteRenderer>().sprite = currentTile.GetComponent<SpriteRenderer>().sprite;
         transform.rotation = currentTile.transform.rotation;
     }
 
-    private GameObject getRandomTile()
+    private GameObject GetRandomTile()
     {
         return TilesToSpawn[Random.Range(0, TilesToSpawn.Length)];
     }

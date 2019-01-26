@@ -40,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
         _animationSelected = AnimationRun;
 
         transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
-        tileDestination = startTile.getRandomNextTile(startTile);
+        tileDestination = startTile.GetRandomNextTile(startTile);
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class EnemyBehaviour : MonoBehaviour
             transform.position = targetPos;
 
             DropTile nextStartTile = tileDestination;
-            tileDestination = tileDestination.getRandomNextTile(startTile);  
+            tileDestination = tileDestination.GetRandomNextTile(startTile);  
             startTile = nextStartTile;
         } else {
             this.gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPos, _currentSpeed);
