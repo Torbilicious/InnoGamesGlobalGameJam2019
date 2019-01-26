@@ -222,5 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBlocked: 1
+  dropSoundVolume: 2.5
   Block: {fileID: 2056863135}
-  dropSound: {fileID: 8300000, guid: f96344dfc38dbed4bbd230239c50a0ff, type: 3}
+  dropSound: {fileID: 8300000, guid: 606345ee512222e4b8192cad3a59d2e7, type: 3}
