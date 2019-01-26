@@ -10,26 +10,21 @@ public class TrapDoor : MonoBehaviour
     private float currentRotation = 0.0f;
 
     private static float endRotation = 90.0f;
+    private Vector3 rotationPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotationPoint = transform.position - new Vector3(0.6f, 0.0f, 0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (activated && currentRotation < endRotation) {
-
-            currentRotation += rotationSpeed;
-
-            if(currentRotation >= endRotation) {
-                currentRotation = endRotation;
-            }
-
-            //transform.Rotate(0, 0, Time.deltaTime * currentRotation, Space.World);
-            transform.RotateAround(this.position, this.up, rotationSpeed * Time.deltaTime);
+        if (transform.parent.gameObject.activated && currentRotation < endRotation) {
+            rotationSpeed *= 1.1f;
+            currentRotation += Mathf.Abs(rotationSpeed);
+            transform.Rotate(0.0f, 0.0f, -rotationSpeed);
         }
     }
 }
