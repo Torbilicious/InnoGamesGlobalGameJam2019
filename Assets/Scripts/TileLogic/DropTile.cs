@@ -8,6 +8,7 @@ public class DropTile : MonoBehaviour
     private static Dictionary<Vector3, DropTile> _droppedTiles = new Dictionary<Vector3, DropTile>();
 
     public bool isDragging = false;
+    public bool isPreset = false;
 
     public DropTile nextTileTop;
     public DropTile nextTileRight;
@@ -25,6 +26,10 @@ public class DropTile : MonoBehaviour
 
     void Start()
     {
+        if(isPreset) 
+        {
+            _droppedTiles.Add(this.transform.position, this);
+        }
     }
 
     // Update is called once per frame
