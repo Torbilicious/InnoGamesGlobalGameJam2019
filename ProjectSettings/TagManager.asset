@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Play
   - Ground
   - Snappoint
   - PlaceableArea
   - WayPoint
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
