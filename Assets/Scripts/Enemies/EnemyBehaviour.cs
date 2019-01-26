@@ -29,6 +29,8 @@ public class EnemyBehaviour : MonoBehaviour
     private SpriteRenderer _spr;
     private Animation2D _animationSelected;
 
+    private bool firstTileSet = false;
+
 //    private TrapItem _trapItem;
 
     /// <summary>
@@ -40,7 +42,6 @@ public class EnemyBehaviour : MonoBehaviour
         _animationSelected = AnimationRun;
 
         transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
-        tileDestination = startTile.GetRandomNextTile(startTile);
     }
 
     /// <summary>
@@ -48,6 +49,19 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(!firstTileSet)
+        {
+            tileDestination = startTile.GetRandomNextTile(startTile);
+            if (tileDestination != null)
+            {
+                firstTileSet = true;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
 
         Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
@@ -59,7 +73,11 @@ public class EnemyBehaviour : MonoBehaviour
             transform.position = targetPos;
 
             DropTile nextStartTile = tileDestination;
-            tileDestination = tileDestination.GetRandomNextTile(startTile);  
+            tileDestination = tileDestination.GetRandomNextTile(startTile);
+            if(tileDestination == null)
+            {
+                Die();
+            }
             startTile = nextStartTile;
         }
         else
@@ -116,5 +134,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
         _spr.sprite = _animationSelected.GetNext();
+    }
+
+    void Die()
+    {
+        //TODO: Game Over
+        Destroy(this.gameObject);
     }
 }
