@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public float FearLevel = 0;
-
-    public float FearLevelMax = 100;
+    public LevelTile startTile;
 
     public EnemyItem[] Items;
 
-    public WayPoint SpawnPoint;
+    public float FearLevel = 0;
+
+    public float FearLevelMax = 100;
 
     public float Speed = 1.0f;
 
@@ -36,6 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _spr = GetComponent<SpriteRenderer>();
         _animationSelected = AnimationRun;
+        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
     }
 
     /// <summary>
@@ -53,11 +54,12 @@ public class EnemyBehaviour : MonoBehaviour
 		}
 
         //Room Movement
+        /*
         if (this.SpawnPoint != null)
         {
             _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
             this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
-        }
+        }*/
 
         SetAnimation();
 
@@ -73,10 +75,11 @@ public class EnemyBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //Waypoint Update
+        /*
         if (other.CompareTag("WayPoint") && this.SpawnPoint.HasWayPoint())
         {
             this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
-        }
+        }*/
 
         //Trap handler
         if(other.CompareTag("Trap"))

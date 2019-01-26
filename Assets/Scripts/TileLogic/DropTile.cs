@@ -6,11 +6,6 @@ public class DropTile : MonoBehaviour
 {
     bool isDragging = true;
 
-    public EmptyDropTile nextTileTop;
-    public EmptyDropTile nextTileRight;
-    public EmptyDropTile nextTileBottom;
-    public EmptyDropTile nextTileLeft;
-
     private Collider2D _lastCollider;
 
     // Start is called before the first frame update
