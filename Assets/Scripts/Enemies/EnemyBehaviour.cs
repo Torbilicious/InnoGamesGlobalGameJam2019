@@ -50,18 +50,20 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
 
-
         Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
         targetPos.z = transform.position.z;
 
         // move to next tile
-        if( (targetPos - transform.position).magnitude < 0.01f) {
+        if( (targetPos - transform.position).magnitude < 0.01f)
+        {
             transform.position = targetPos;
 
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);  
             startTile = nextStartTile;
-        } else {
+        }
+        else
+        {
             this.gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPos, _currentSpeed);
         }
 

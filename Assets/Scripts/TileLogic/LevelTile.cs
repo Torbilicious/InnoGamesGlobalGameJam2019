@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class LevelTile : MonoBehaviour
 {
+    public bool IsBlocked = false;
+    public GameObject Block;
+
     void Start()
     {
         //Be sure that Tile is snapped to Grid
@@ -12,6 +15,11 @@ public class LevelTile : MonoBehaviour
             (float)Math.Round(this.transform.position.x),
             (float)Math.Round(this.transform.position.y),
             (float)Math.Round(this.transform.position.z));
+    }
+
+    void Update()
+    {
+        Block.SetActive(IsBlocked);
     }
 
     void OnTriggerEnter2D(Collider2D other)
