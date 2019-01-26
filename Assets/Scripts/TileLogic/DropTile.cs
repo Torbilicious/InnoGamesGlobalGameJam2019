@@ -5,7 +5,7 @@ using static ResetCause;
 
 public class DropTile : MonoBehaviour
 {
-    private static Dictionary<Vector3, DropTile> _droppedTiles = new Dictionary<Vector3, DropTile>();
+    private static Dictionary<Vector2, DropTile> _droppedTiles = new Dictionary<Vector2, DropTile>();
 
     public bool isDragging = false;
     public bool isPreset = false;
@@ -32,7 +32,7 @@ public class DropTile : MonoBehaviour
     {
         if(isPreset) 
         {
-            _droppedTiles.Add(this.transform.position, this);
+           _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
         }
     }
 
@@ -56,7 +56,7 @@ public class DropTile : MonoBehaviour
                 {
                     SpawnableItem.Reset(PLACED);
                 }
-                _droppedTiles.Add(this.transform.position, this);
+                _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
             }
             else
             {
@@ -144,10 +144,11 @@ public class DropTile : MonoBehaviour
         Vector3 euler = this.transform.eulerAngles;
         this.transform.Rotate(-euler);
 
-        Vector3 left = this.transform.position + Vector3.left;
-        Vector3 right = this.transform.position + Vector3.right;
-        Vector3 top = this.transform.position + Vector3.up;
-        Vector3 bottom = this.transform.position + Vector3.down;
+        Vector2 posNoZ = new Vector2(this.transform.position.x, this.transform.position.y);
+        Vector2 left = posNoZ + Vector2.left;
+        Vector2 right = posNoZ + Vector2.right;
+        Vector2 top = posNoZ + Vector2.up;
+        Vector2 bottom = posNoZ + Vector2.down;
 
         if (this.Left && _droppedTiles.ContainsKey(left) && _droppedTiles[left].Right)
         {
