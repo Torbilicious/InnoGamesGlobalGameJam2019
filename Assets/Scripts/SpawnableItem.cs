@@ -23,7 +23,7 @@ public class SpawnableItem : MonoBehaviour
         tile.transform.parent = null;
         tile.GetComponent<DropTile>().SpawnableItem = this;
 
-        gameObject.active = false;
+        gameObject.SetActive(false);
     }
 
     public void reset(ResetCause cause)
@@ -37,7 +37,7 @@ public class SpawnableItem : MonoBehaviour
                 break;
         }
 
-        gameObject.active = true;
+        gameObject.SetActive(true);
     }
 
     private void applySpriteFromMimickedTile()
