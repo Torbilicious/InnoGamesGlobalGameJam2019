@@ -115,9 +115,17 @@ public class EnemyBehaviour : MonoBehaviour
         RendererDust.sprite = AnimationDust.GetNext();
     }
 
-    void Die()
+    public void Die()
     {
         //TODO: Game Over
         Destroy(this.gameObject);
+    }
+
+    public void TeleportTo(DropTile tile)
+    {
+        Vector3 target = tile.transform.position;
+        target.z = transform.position.z;
+        transform.position = target;
+        tileDestination = tile;
     }
 }

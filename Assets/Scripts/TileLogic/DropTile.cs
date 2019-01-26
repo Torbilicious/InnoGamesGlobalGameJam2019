@@ -63,6 +63,11 @@ public class DropTile : MonoBehaviour
                     SpawnableItem.Reset(PLACED);
                 }
                 _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
+
+                if(_connectedTile.PortalTo != null)
+                {
+                    //TODO: Portal-Animation aktivieren
+                }
             }
             else
             {
@@ -107,14 +112,14 @@ public class DropTile : MonoBehaviour
 
     private void OnManualMouseDown()
     {
-        if(rotateSound)
+        if (rotateSound)
             AudioSource.PlayClipAtPoint(rotateSound, transform.position, rotateSoundVolume);
 
         bool left = false, right = false, top = false, bottom = false;
         this.transform.Rotate(0, 0, -90);
-        if(this.Left) { top = true; }
+        if (this.Left) { top = true; }
         if (this.Top) { right = true; }
-        if(this.Right){ bottom = true; }
+        if (this.Right) { bottom = true; }
         if (this.Bottom) { left = true; }
 
         this.Left = left;
@@ -127,6 +132,18 @@ public class DropTile : MonoBehaviour
     {
         behaviour.Speed *= _connectedTile.SpeedModifier;
         behaviour.Speed = Math.Max(behaviour.Speed, behaviour.SpeedMax);
+
+        if(_connectedTile.PortalTo != null && !_connectedTile.IsPortalExit())
+        {
+            if (_droppedTiles.ContainsKey(_connectedTile.PortalTo.transform.position))
+            {
+                behaviour.TeleportTo(_droppedTiles[_connectedTile.PortalTo.transform.position]);
+            }
+            else
+            {
+                behaviour.Die();
+            }
+        }
     }
 
     public DropTile GetRandomNextTile(DropTile ignoreTile) {
