@@ -28,6 +28,8 @@ public class DropTile : MonoBehaviour
 
     private bool mouseDown;
 
+    public bool CanRotate = true;
+
     void Start()
     {
         if(isPreset) 
@@ -65,7 +67,7 @@ public class DropTile : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && !mouseDown && !isDragging)
+        if (Input.GetMouseButton(0) && !mouseDown && !isDragging && CanRotate)
         {
             Vector3 stw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Rect rect = new Rect(gameObject.transform.position - gameObject.transform.localScale / 2, gameObject.transform.localScale);

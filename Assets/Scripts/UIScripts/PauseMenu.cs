@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
     public static bool GameIsPaused = false;
 
     public GameObject PauseMenuUI;
@@ -13,8 +12,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-            PauseMenuBackground.SetActive(false);
-            PauseMenuUI.SetActive(false);  
+        PauseMenuBackground.SetActive(false);
+        PauseMenuUI.SetActive(false);
     }
 
     // Update is called once per frame

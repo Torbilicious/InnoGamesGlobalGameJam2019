@@ -23,11 +23,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private DropTile tileDestination;
 
+    public SpriteRenderer RendererRun;
+    public SpriteRenderer RendererDust;
     public Animation2D AnimationRun;
-    public Animation2D AnimationClimb;
-
-    private SpriteRenderer _spr;
-    private Animation2D _animationSelected;
+    public Animation2D AnimationDust;
 
     private bool firstTileSet = false;
 
@@ -38,8 +37,6 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Start()
     {
-        _spr = GetComponent<SpriteRenderer>();
-        _animationSelected = AnimationRun;
 
         //transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
     }
@@ -49,12 +46,14 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //SetAnimation();
         if(!firstTileSet)
         {
             tileDestination = startTile.GetRandomNextTile(startTile);
             if (tileDestination != null)
             {
                 firstTileSet = true;
+                tileDestination.CanRotate = false;
             }
             else
             {
@@ -79,6 +78,7 @@ public class EnemyBehaviour : MonoBehaviour
                 Die();
             }
             startTile = nextStartTile;
+            nextStartTile.CanRotate = false;
         }
         else
         {
@@ -133,7 +133,8 @@ public class EnemyBehaviour : MonoBehaviour
     void SetAnimation()
     {
         //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
-        _spr.sprite = _animationSelected.GetNext();
+        RendererRun.sprite = AnimationRun.GetNext();
+        RendererDust.sprite = AnimationDust.GetNext();
     }
 
     void Die()
