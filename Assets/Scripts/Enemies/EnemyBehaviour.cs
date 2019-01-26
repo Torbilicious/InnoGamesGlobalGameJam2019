@@ -7,8 +7,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public DropTile startTile;
 
-    public EnemyItem[] Items;
-
     public float FearLevel = 0;
 
     public float FearLevelMax = 100;
@@ -86,16 +84,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             this.gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPos, _currentSpeed);
         }
-
-
-        //Item Drops
-        foreach(EnemyItem item in Items)
-		{
-			if(item.DropOnFearLevel >= this.FearLevel && !item.IsDropped)
-			{
-                item.DropItem(this.gameObject.transform.position);
-			}
-		}
 
         SetAnimation();
 
