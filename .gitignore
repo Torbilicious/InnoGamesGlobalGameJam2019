@@ -56,3 +56,6 @@ crashlytics-build.properties
 
 # GameJam
 ProjectSettings/ProjectVersion.txt
+
+# Visual Studio Code
+.vscode/

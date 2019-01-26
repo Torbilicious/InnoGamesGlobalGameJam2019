@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public LevelTile startTile;
+    public DropTile startTile;
 
     public EnemyItem[] Items;
 
@@ -20,6 +20,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float _currentSpeed = 1.0f;
 
     private int _currentSprite;
+
+    private DropTile tileDestination;
 
     public Animation2D AnimationRun;
     public Animation2D AnimationClimb;
@@ -36,7 +38,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _spr = GetComponent<SpriteRenderer>();
         _animationSelected = AnimationRun;
-        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+
+        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
+        tileDestination = startTile.getRandomNextTile(startTile);
     }
 
     /// <summary>
@@ -44,6 +48,24 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
+
+
+        Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        targetPos.z = transform.position.z;
+
+        // move to next tile
+        if( (targetPos - transform.position).magnitude < 0.01f) {
+            transform.position = targetPos;
+
+            DropTile nextStartTile = tileDestination;
+            tileDestination = tileDestination.getRandomNextTile(startTile);  
+            startTile = nextStartTile;
+        } else {
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPos, _currentSpeed);
+        }
+
+
         //Item Drops
         foreach(EnemyItem item in Items)
 		{
@@ -52,14 +74,6 @@ public class EnemyBehaviour : MonoBehaviour
                 item.DropItem(this.gameObject.transform.position);
 			}
 		}
-
-        //Room Movement
-        /*
-        if (this.SpawnPoint != null)
-        {
-            _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
-            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, SpawnPoint.transform.position, _currentSpeed);
-        }*/
 
         SetAnimation();
 
