@@ -39,7 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
         _spr = GetComponent<SpriteRenderer>();
         _animationSelected = AnimationRun;
 
-        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
         tileDestination = startTile.getRandomNextTile(startTile);
     }
 
@@ -49,20 +49,20 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
-  
-        // move to next tile
-        Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
-        float distance = (targetPos - transform.position).magnitude;
-        Vector3 stepVelocity = Vector3.Normalize(targetPos - transform.position) * _currentSpeed;
 
-        if(distance < 0.01f) {
+
+        Vector3 targetPos = tileDestination.transform.position + new Vector3(-0.25f, 0.25f, 0.0f);
+        targetPos.z = transform.position.z;
+
+        // move to next tile
+        if( (targetPos - transform.position).magnitude < 0.01f) {
             transform.position = targetPos;
 
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.getRandomNextTile(startTile);  
             startTile = nextStartTile;
         } else {
-            transform.position += stepVelocity;
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPos, _currentSpeed);
         }
 
 
