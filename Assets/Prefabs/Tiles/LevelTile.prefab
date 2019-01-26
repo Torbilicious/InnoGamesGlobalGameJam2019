@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6008923770096672453}
   - component: {fileID: 6008923770096672452}
   m_Layer: 0
-  m_Name: EmptyTile
+  m_Name: LevelTile
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a44f225f853a4b30a24c27af9a03acc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5a4abcb20baf6448ad2aad737b775f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
