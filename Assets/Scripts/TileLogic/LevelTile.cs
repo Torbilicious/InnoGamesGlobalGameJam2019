@@ -6,6 +6,9 @@ using UnityEngine;
 public class LevelTile : MonoBehaviour
 {
     public bool IsBlocked = false;
+
+    public float dropSoundVolume = 2.5f;
+
     public GameObject Block;
 
     public AudioClip dropSound;
@@ -31,6 +34,6 @@ public class LevelTile : MonoBehaviour
 
     public void HandleTileSet()
     {
-        AudioSource.PlayClipAtPoint(dropSound, transform.position);
+        AudioSource.PlayClipAtPoint(dropSound, transform.position, dropSoundVolume);
     }
 }
