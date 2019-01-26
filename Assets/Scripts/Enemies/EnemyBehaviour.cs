@@ -21,6 +21,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private int _currentSprite;
 
+    private LevelTile tileDestination;
+
     public Animation2D AnimationRun;
     public Animation2D AnimationClimb;
 
@@ -44,6 +46,13 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(tileDestination == null) 
+        {
+            // get next tile   
+        } else { // check distance
+
+        }
+
         //Item Drops
         foreach(EnemyItem item in Items)
 		{
