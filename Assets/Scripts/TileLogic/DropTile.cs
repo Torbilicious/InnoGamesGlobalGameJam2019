@@ -34,7 +34,7 @@ public class DropTile : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         if (isDragging)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -54,7 +54,6 @@ public class DropTile : MonoBehaviour
                     SpawnableItem.Reset(PLACED);
                 }
                 _droppedTiles.Add(this.transform.position, this);
-                ConnectTiles(true);
             }
             else
             {
@@ -62,6 +61,8 @@ public class DropTile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        ConnectTiles(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -90,11 +91,6 @@ public class DropTile : MonoBehaviour
         this.Right = right;
         this.Top = top;
         this.Bottom = bottom;
-
-        foreach(DropTile tile in _droppedTiles.Values)
-        {
-            tile.ConnectTiles(false);
-        }
     }
 
     public DropTile GetRandomNextTile(DropTile ignoreTile) {
@@ -124,22 +120,27 @@ public class DropTile : MonoBehaviour
         Vector3 euler = this.transform.eulerAngles;
         this.transform.Rotate(-euler);
 
-        if (this.Left && _droppedTiles.ContainsKey(this.transform.position + Vector3.left))
+        Vector3 left = this.transform.position + Vector3.left;
+        Vector3 right = this.transform.position + Vector3.right;
+        Vector3 top = this.transform.position + Vector3.up;
+        Vector3 bottom = this.transform.position + Vector3.down;
+
+        if (this.Left && _droppedTiles.ContainsKey(left) && _droppedTiles[left].Right)
         {
-            nextTileLeft = _droppedTiles[this.transform.position + Vector3.left];
+            nextTileLeft = _droppedTiles[left];
             if(connectNeighbours) nextTileLeft.ConnectTiles(false);
         }
-        if (this.Right && _droppedTiles.ContainsKey(this.transform.position + Vector3.right))
+        if (this.Right && _droppedTiles.ContainsKey(right) && _droppedTiles[right].Left)
         {
             nextTileRight = _droppedTiles[this.transform.position + Vector3.right];
             if (connectNeighbours) nextTileRight.ConnectTiles(false);
         }
-        if (this.Bottom && _droppedTiles.ContainsKey(this.transform.position + Vector3.down))
+        if (this.Bottom && _droppedTiles.ContainsKey(bottom) && _droppedTiles[bottom].Top)
         {
-            nextTileBottom = _droppedTiles[this.transform.position + Vector3.down];
+            nextTileBottom = _droppedTiles[bottom];
             if (connectNeighbours) nextTileBottom.ConnectTiles(false);
         }
-        if (this.Top && _droppedTiles.ContainsKey(this.transform.position + Vector3.up))
+        if (this.Top && _droppedTiles.ContainsKey(top) && _droppedTiles[top].Bottom)
         {
             nextTileTop = _droppedTiles[this.transform.position + Vector3.up];
             if (connectNeighbours) nextTileTop.ConnectTiles(false);
