@@ -5,6 +5,7 @@ using UnityEngine;
 public class DropTile : MonoBehaviour
 {
     bool isDragging = true;
+
     private Collider2D _lastCollider;
 
     // Start is called before the first frame update

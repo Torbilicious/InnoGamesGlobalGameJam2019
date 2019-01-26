@@ -21,10 +21,10 @@ public class TrapDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.parent.gameObject.activated && currentRotation < endRotation) {
+/*         if (transform.parent.gameObject.activated && currentRotation < endRotation) {
             rotationSpeed *= 1.1f;
             currentRotation += Mathf.Abs(rotationSpeed);
             transform.Rotate(0.0f, 0.0f, -rotationSpeed);
-        }
+}*/
     }
 }

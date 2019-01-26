@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class LevelTile : MonoBehaviour
 {
+    public LevelTile nextTileTop;
+    public LevelTile nextTileRight;
+    public LevelTile nextTileBottom;
+    public LevelTile nextTileLeft;
+
     void Start()
     {
         //Be sure that Tile is snapped to Grid
