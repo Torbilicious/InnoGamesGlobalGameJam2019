@@ -3,7 +3,13 @@ guid: efa174733be9fea4bad70c7ed3427898
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nextTileTop: {instanceID: 0}
+  - nextTileRight: {instanceID: 0}
+  - nextTileBottom: {instanceID: 0}
+  - nextTileLeft: {instanceID: 0}
+  - SpawnableItem: {instanceID: 0}
+  - rotateSound: {fileID: 8300000, guid: 64bc51e03440f0949a096f671f645b3a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

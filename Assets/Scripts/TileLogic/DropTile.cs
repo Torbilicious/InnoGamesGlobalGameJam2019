@@ -23,6 +23,8 @@ public class DropTile : MonoBehaviour
     public bool Right;
     public bool Top;
     public bool Bottom;
+    public AudioClip rotateSound;
+    public float rotateSoundVolume = 2.5f;
 
     void Start()
     {
@@ -80,6 +82,9 @@ public class DropTile : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(rotateSound)
+            AudioSource.PlayClipAtPoint(rotateSound, transform.position, rotateSoundVolume);
+
         bool left = false, right = false, top = false, bottom = false;
         this.transform.Rotate(0, 0, -90);
         if(this.Left) { top = true; }
