@@ -130,8 +130,8 @@ public class DropTile : MonoBehaviour
 
     public void AddModifiers(EnemyBehaviour behaviour)
     {
-        behaviour.Speed *= _connectedTile.SpeedModifier;
-        behaviour.Speed = Math.Max(behaviour.Speed, behaviour.SpeedMax);
+        behaviour.FearLevel *= _connectedTile.SpeedModifier;
+        behaviour.FearLevel = Math.Max(behaviour.FearLevel, behaviour.FearLevelMax);
 
         if(_connectedTile.PortalTo != null && !_connectedTile.IsPortalExit())
         {
@@ -155,7 +155,7 @@ public class DropTile : MonoBehaviour
         if (nextTileBottom != null && nextTileBottom != ignoreTile) tileList.Add(nextTileBottom);
 
         if(tileList.Count == 0) {
-            return null;// tileList.Add(ignoreTile); //TODO: game over! The player goes back for now
+            return null;
         }
 
         System.Random rnd = new System.Random(); // choose a random tile
