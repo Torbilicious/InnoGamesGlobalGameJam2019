@@ -8,6 +8,8 @@ TagManager:
   - Snappoint
   - PlaceableArea
   - WayPoint
+  - Trap
+  - Tile
   layers:
   - Default
   - TransparentFX
