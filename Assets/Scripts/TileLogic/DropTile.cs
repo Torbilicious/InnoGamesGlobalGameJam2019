@@ -7,7 +7,7 @@ public class DropTile : MonoBehaviour
 {
     private static Dictionary<Vector3, DropTile> _droppedTiles = new Dictionary<Vector3, DropTile>();
 
-    bool isDragging = true;
+    public bool isDragging = false;
 
     public DropTile nextTileTop;
     public DropTile nextTileRight;

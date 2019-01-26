@@ -22,6 +22,7 @@ public class SpawnableItem : MonoBehaviour
         var tile = Instantiate(tileToSpawn, gameObject.transform, true);
         tile.transform.parent = null;
         tile.GetComponent<DropTile>().SpawnableItem = this;
+        tile.GetComponent<DropTile>().isDragging = true;
 
         gameObject.SetActive(false);
     }
