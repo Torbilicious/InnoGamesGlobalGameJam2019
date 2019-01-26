@@ -7,9 +7,9 @@ public class Win : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public void LoadNextLevel(int lastLevel)
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene(lastLevel+1);
+        SceneManager.LoadScene("Level " + (++GameState.levelNum));
     }
 
     public void BackToMenu()

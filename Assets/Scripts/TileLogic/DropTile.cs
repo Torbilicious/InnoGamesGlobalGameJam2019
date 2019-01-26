@@ -6,10 +6,10 @@ using static ResetCause;
 
 public class DropTile : MonoBehaviour
 {
-    private static Dictionary<Vector2, DropTile> _droppedTiles = new Dictionary<Vector2, DropTile>();
-
     public bool isDragging = false;
     public bool isPreset = false;
+
+    public bool isGoal = false;
 
     public DropTile nextTileTop;
     public DropTile nextTileRight;
@@ -33,17 +33,22 @@ public class DropTile : MonoBehaviour
 
     private LevelTile _connectedTile;
 
+    private Level level;
+
     void Start()
     {
-        if(isPreset) 
-        {
-           _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
-        }
+        level = GameObject.Find("Level").GetComponent<Level>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isPreset) 
+        {
+           level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
+           isPreset = false;
+        }
+
         if (isDragging)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -62,7 +67,7 @@ public class DropTile : MonoBehaviour
                 {
                     SpawnableItem.Reset(PLACED);
                 }
-                _droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
+                level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
 
                 if(_connectedTile.PortalTo != null)
                 {
@@ -135,9 +140,9 @@ public class DropTile : MonoBehaviour
 
         if(_connectedTile.PortalTo != null && !_connectedTile.IsPortalExit())
         {
-            if (_droppedTiles.ContainsKey(_connectedTile.PortalTo.transform.position))
+            if (level._droppedTiles.ContainsKey(_connectedTile.PortalTo.transform.position))
             {
-                behaviour.TeleportTo(_droppedTiles[_connectedTile.PortalTo.transform.position]);
+                behaviour.TeleportTo(level._droppedTiles[_connectedTile.PortalTo.transform.position]);
             }
             else
             {
@@ -179,24 +184,24 @@ public class DropTile : MonoBehaviour
         Vector2 top = posNoZ + Vector2.up;
         Vector2 bottom = posNoZ + Vector2.down;
 
-        if (this.Left && _droppedTiles.ContainsKey(left) && _droppedTiles[left].Right)
+        if (this.Left && level._droppedTiles.ContainsKey(left) && level._droppedTiles[left].Right)
         {
-            nextTileLeft = _droppedTiles[left];
+            nextTileLeft = level._droppedTiles[left];
             if(connectNeighbours) nextTileLeft.ConnectTiles(false);
         }
-        if (this.Right && _droppedTiles.ContainsKey(right) && _droppedTiles[right].Left)
+        if (this.Right && level._droppedTiles.ContainsKey(right) && level._droppedTiles[right].Left)
         {
-            nextTileRight = _droppedTiles[this.transform.position + Vector3.right];
+            nextTileRight = level._droppedTiles[this.transform.position + Vector3.right];
             if (connectNeighbours) nextTileRight.ConnectTiles(false);
         }
-        if (this.Bottom && _droppedTiles.ContainsKey(bottom) && _droppedTiles[bottom].Top)
+        if (this.Bottom && level._droppedTiles.ContainsKey(bottom) && level._droppedTiles[bottom].Top)
         {
-            nextTileBottom = _droppedTiles[bottom];
+            nextTileBottom = level._droppedTiles[bottom];
             if (connectNeighbours) nextTileBottom.ConnectTiles(false);
         }
-        if (this.Top && _droppedTiles.ContainsKey(top) && _droppedTiles[top].Bottom)
+        if (this.Top && level._droppedTiles.ContainsKey(top) && level._droppedTiles[top].Bottom)
         {
-            nextTileTop = _droppedTiles[this.transform.position + Vector3.up];
+            nextTileTop = level._droppedTiles[this.transform.position + Vector3.up];
             if (connectNeighbours) nextTileTop.ConnectTiles(false);
         }
 

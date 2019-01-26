@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -35,8 +36,6 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Start()
     {
-
-        //transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
     }
 
     /// <summary>
@@ -61,13 +60,19 @@ public class EnemyBehaviour : MonoBehaviour
 
         _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
 
-        Vector3 targetPos = tileDestination.transform.position;// + new Vector3(-0.25f, 0.25f, 0.0f);
+        Vector3 targetPos = tileDestination.transform.position;
         targetPos.z = transform.position.z;
 
         // move to next tile
         if( (targetPos - transform.position).magnitude < 0.01f)
         {
             transform.position = targetPos;
+
+            if(tileDestination.isGoal) {
+                winLevel();
+                return;                
+            }
+
             tileDestination.AddModifiers(this);
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);
@@ -107,6 +112,12 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //TODO: Game Over
         Destroy(this.gameObject);
+    }
+
+    public void winLevel()
+    {
+        Debug.Log("WIN");
+        SceneManager.LoadScene("WinningScreen");
     }
 
     public void TeleportTo(DropTile tile)
