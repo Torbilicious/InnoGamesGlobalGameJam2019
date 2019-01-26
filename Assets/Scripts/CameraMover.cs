@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-    public float dragSpeed = 2;
-    private Vector3 dragOrigin;
-    private const int mouseButton = 1;
+    public float DragSpeed = 2;
+    private Vector3 _dragOrigin;
+    private const int _mouseButton = 1;
+
+    private Vector3 _velocity;
  
     void Update()
     {
-        if (Input.GetMouseButtonDown(mouseButton))
+        if (!Input.GetMouseButton(_mouseButton))
         {
-            dragOrigin = Input.mousePosition;
             return;
         }
- 
-        if (!Input.GetMouseButton(mouseButton)) return;
- 
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = new Vector3(pos.x * dragSpeed, pos.y * dragSpeed, 0);
- 
-        transform.Translate(move, Space.World);  
+        else if (Input.GetMouseButtonDown(_mouseButton))
+        {
+            _dragOrigin = Input.mousePosition;
+        }
+        else
+        {
+            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _dragOrigin);
+            _dragOrigin = Input.mousePosition;
+            Vector3 move = Vector3.SmoothDamp(pos, new Vector3(pos.x * -DragSpeed * 200, pos.y * -DragSpeed * 200, 0), ref _velocity, 0.5f);
+            transform.Translate(move, Space.World);
+        }
     }
 }
