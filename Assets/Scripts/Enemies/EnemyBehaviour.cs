@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public LevelTile startTile;
+    public DropTile startTile;
 
     public EnemyItem[] Items;
 
@@ -49,6 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(tileDestination == null) 
         {
             // get next tile   
+           
         } else { // check distance
 
         }
