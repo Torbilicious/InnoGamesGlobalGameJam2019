@@ -17,10 +17,17 @@ public class Animation2D : MonoBehaviour
         _sprite = Resources.LoadAll<Sprite>("Sprites/" + Sprite);
         _currentSprite = 0;
         _spriteStep = 0.0f;
+
+        if (_sprite.Length == 0)
+        {
+            Debug.Log("Die Animation " + Sprite + " wurde nicht gefunden! Erwartete Position: /Resources/Sprites/" + Sprite);
+        }
     }
 
     public Sprite GetNext()
     {
+        if (_sprite.Length == 0) return null;
+
         _spriteStep += Time.deltaTime;
         if (_spriteStep > 1 / RunSpeed)
         {
