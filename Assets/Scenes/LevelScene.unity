@@ -884,6 +884,11 @@ PrefabInstance:
       propertyPath: startTile
       value: 
       objectReference: {fileID: 1244444875}
+    - target: {fileID: 5547743201495557972, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
+        type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b7c49ce62fb294cb20ae01d1a8c73b, type: 3}
 --- !u!1 &789129290
@@ -1610,7 +1615,7 @@ PrefabInstance:
     - target: {fileID: 7322165735209628621, guid: cc01046d8ab5f44ee86575ea87b8f8d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.15
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7322165735209628621, guid: cc01046d8ab5f44ee86575ea87b8f8d1,
         type: 3}
