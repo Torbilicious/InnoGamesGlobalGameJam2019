@@ -45,14 +45,14 @@ public class DropTile : MonoBehaviour
                 isDragging = false;
                 if (SpawnableItem != null)
                 {
-                    SpawnableItem.reset(PLACED);
+                    SpawnableItem.Reset(PLACED);
                 }
                 _droppedTiles.Add(this.transform.position, this);
                 ConnectTiles(true);
             }
             else
             {
-                SpawnableItem.reset(CANCEL);
+                SpawnableItem.Reset(CANCEL);
                 Destroy(gameObject);
             }
         }
@@ -71,7 +71,7 @@ public class DropTile : MonoBehaviour
         }
     }
 
-    public DropTile getRandomNextTile(DropTile ignoreTile) {
+    public DropTile GetRandomNextTile(DropTile ignoreTile) {
         
         List<DropTile> tileList = new List<DropTile>();
         if (nextTileLeft != null && nextTileLeft != ignoreTile) tileList.Add(nextTileLeft);
