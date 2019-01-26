@@ -27,7 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
     private SpriteRenderer _spr;
     private Animation2D _animationSelected;
 
-    private TrapItem _trapItem;
+//    private TrapItem _trapItem;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -81,7 +81,7 @@ public class EnemyBehaviour : MonoBehaviour
         //Trap handler
         if(other.CompareTag("Trap"))
         {
-            TrapItem trapItem = other.gameObject.GetComponent<TrapItem>();
+            /*TrapItem trapItem = other.gameObject.GetComponent<TrapItem>();
             if(trapItem == null)
             {
                 Debug.Log("Trap hat keine Item-Funktion zugewiesen bekommen");
@@ -89,7 +89,7 @@ public class EnemyBehaviour : MonoBehaviour
             this.FearLevel += trapItem.Fear;
             _trapItem = trapItem;
             //activate animation
-            //
+            */
         }
     }
 
