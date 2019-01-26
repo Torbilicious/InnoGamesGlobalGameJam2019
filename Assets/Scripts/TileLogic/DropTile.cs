@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmptyDropTile : MonoBehaviour
+public class DropTile : MonoBehaviour
 {
     bool isDragging = true;
 
