@@ -8,6 +8,7 @@ public class DraggableItem : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("test");
         var position = gameObject.transform.position;
 
         screenPoint = Camera.main.WorldToScreenPoint(position);
