@@ -29,8 +29,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool firstTileSet = false;
 
-//    private TrapItem _trapItem;
-
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
@@ -43,7 +41,7 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //SetAnimation();
+        //Wait until the first tile has been placed and the game begins
         if(!firstTileSet)
         {
             tileDestination = startTile.GetRandomNextTile(startTile);
@@ -76,6 +74,7 @@ public class EnemyBehaviour : MonoBehaviour
             tileDestination.AddModifiers(this);
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);
+            //There is no next tile
             if(tileDestination == null)
             {
                 Die();
@@ -95,15 +94,11 @@ public class EnemyBehaviour : MonoBehaviour
         if(this.FearLevel >= this.FearLevelMax)
         {
             //TODO: Was soll passieren, wenn FearLevel voll ist??
-            //_trapItem.dosomething();
         }
-
-        //TODO: Triggers for traps
     }
 
     void SetAnimation()
     {
-        //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
         RendererRun.sprite = AnimationRun.GetNext();
         RendererDust.sprite = AnimationDust.GetNext();
     }

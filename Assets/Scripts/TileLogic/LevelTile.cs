@@ -22,6 +22,7 @@ public class LevelTile : MonoBehaviour
 
     public float SpeedModifier = 1.0f;
 
+    public GameObject PortalPrefab;
     public LevelTile PortalTo;
 
     private Portals _portal;
@@ -39,6 +40,8 @@ public class LevelTile : MonoBehaviour
             _portal = Portals.ENTRY;
             PortalTo._portal = Portals.EXIT;
             PortalTo.PortalTo = this;
+            CreatePortal();
+            PortalTo.CreatePortal();
         }
         else
         {
@@ -64,5 +67,11 @@ public class LevelTile : MonoBehaviour
     public bool IsPortalExit()
     {
         return _portal == Portals.EXIT;
+    }
+
+    private void CreatePortal()
+    {
+        var portal = Instantiate(PortalPrefab, transform, false);
+        portal.GetComponent<Portal>().IsExit = _portal == Portals.EXIT;
     }
 }
