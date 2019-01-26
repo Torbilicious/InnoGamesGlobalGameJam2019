@@ -8,6 +8,8 @@ public class LevelTile : MonoBehaviour
     public bool IsBlocked = false;
     public GameObject Block;
 
+    public AudioClip dropSound;
+
     void Start()
     {
         //Be sure that Tile is snapped to Grid
@@ -25,5 +27,10 @@ public class LevelTile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
+    }
+
+    public void HandleTileSet()
+    {
+        AudioSource.PlayClipAtPoint(dropSound, transform.position);
     }
 }

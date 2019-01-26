@@ -45,6 +45,7 @@ public class DropTile : MonoBehaviour
         {
             if (_lastCollider != null && _lastCollider.bounds.Intersects(GetComponent<Collider2D>().bounds))
             {
+                _lastCollider.GetComponent<LevelTile>().HandleTileSet();
                 this.transform.position = _lastCollider.transform.position;
                 Destroy(_lastCollider.gameObject);
                 isDragging = false;
