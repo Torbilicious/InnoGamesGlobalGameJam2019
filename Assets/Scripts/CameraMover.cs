@@ -10,16 +10,14 @@ public class CameraMover : MonoBehaviour
     public Rect WorldBounds = new Rect(-5, -5, 10, 10);
 
     private Vector3 _velocity;
- 
-    void Update()
+
+    private void Update()
     {
-        if (Input.GetMouseButton(_mouseButton))
-        {
-            transform.position += new Vector3(Input.GetAxis("Mouse X") * Time.deltaTime * -DragSpeed, Input.GetAxis("Mouse Y") * Time.deltaTime * -DragSpeed, 0f);
-            transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x, WorldBounds.xMin, WorldBounds.xMax),
-                Mathf.Clamp(transform.position.y, WorldBounds.yMin, WorldBounds.yMax),
-                transform.position.z);
-        }
+        if (!Input.GetMouseButton(_mouseButton)) return;
+        transform.position += new Vector3(Input.GetAxis("Mouse X") * Time.deltaTime * -DragSpeed, Input.GetAxis("Mouse Y") * Time.deltaTime * -DragSpeed, 0f);
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, WorldBounds.xMin, WorldBounds.xMax),
+            Mathf.Clamp(transform.position.y, WorldBounds.yMin, WorldBounds.yMax),
+            transform.position.z);
     }
 }
