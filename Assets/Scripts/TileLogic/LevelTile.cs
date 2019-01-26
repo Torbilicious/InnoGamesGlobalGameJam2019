@@ -13,6 +13,8 @@ public class LevelTile : MonoBehaviour
 
     public AudioClip dropSound;
 
+    public float SpeedModifier = 1.0f;
+
     void Start()
     {
         //Be sure that Tile is snapped to Grid

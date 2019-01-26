@@ -23,11 +23,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private DropTile tileDestination;
 
+    public SpriteRenderer RendererRun;
+    public SpriteRenderer RendererDust;
     public Animation2D AnimationRun;
-    public Animation2D AnimationClimb;
-
-    private SpriteRenderer _spr;
-    private Animation2D _animationSelected;
+    public Animation2D AnimationDust;
 
     private bool firstTileSet = false;
 
@@ -38,8 +37,6 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Start()
     {
-        _spr = GetComponent<SpriteRenderer>();
-        _animationSelected = AnimationRun;
 
         //transform.position = startTile.transform.position + new Vector3(-0.25f, 0.25f, transform.position.z);
     }
@@ -49,12 +46,14 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        //SetAnimation();
         if(!firstTileSet)
         {
             tileDestination = startTile.GetRandomNextTile(startTile);
             if (tileDestination != null)
             {
                 firstTileSet = true;
+                tileDestination.CanRotate = false;
             }
             else
             {
@@ -71,14 +70,17 @@ public class EnemyBehaviour : MonoBehaviour
         if( (targetPos - transform.position).magnitude < 0.01f)
         {
             transform.position = targetPos;
-
+            tileDestination.AddModifiers(this);
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);
             if(tileDestination == null)
             {
                 Die();
+                return;
             }
+            
             startTile = nextStartTile;
+            nextStartTile.CanRotate = false;
         }
         else
         {
@@ -106,34 +108,11 @@ public class EnemyBehaviour : MonoBehaviour
         //TODO: Triggers for traps
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //Waypoint Update
-        /*
-        if (other.CompareTag("WayPoint") && this.SpawnPoint.HasWayPoint())
-        {
-            this.SpawnPoint = this.SpawnPoint.GetNextWayPoint();
-        }*/
-
-        //Trap handler
-        if(other.CompareTag("Trap"))
-        {
-            /*TrapItem trapItem = other.gameObject.GetComponent<TrapItem>();
-            if(trapItem == null)
-            {
-                Debug.Log("Trap hat keine Item-Funktion zugewiesen bekommen");
-            }
-            this.FearLevel += trapItem.Fear;
-            _trapItem = trapItem;
-            //activate animation
-            */
-        }
-    }
-
     void SetAnimation()
     {
         //TODO: Detect type of current movement, find objects and change Move animation (climb, run, etc.)
-        _spr.sprite = _animationSelected.GetNext();
+        RendererRun.sprite = AnimationRun.GetNext();
+        RendererDust.sprite = AnimationDust.GetNext();
     }
 
     void Die()

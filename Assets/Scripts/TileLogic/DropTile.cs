@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static ResetCause;
@@ -28,6 +29,10 @@ public class DropTile : MonoBehaviour
 
     private bool mouseDown;
 
+    public bool CanRotate = true;
+
+    private LevelTile _connectedTile;
+
     void Start()
     {
         if(isPreset) 
@@ -50,7 +55,8 @@ public class DropTile : MonoBehaviour
             {
                 _lastCollider.GetComponent<LevelTile>().HandleTileSet();
                 this.transform.position = _lastCollider.transform.position;
-                Destroy(_lastCollider.gameObject);
+                _connectedTile = _lastCollider.gameObject.GetComponent<LevelTile>();
+                _lastCollider.gameObject.SetActive(false);
                 isDragging = false;
                 if (SpawnableItem != null)
                 {
@@ -65,7 +71,7 @@ public class DropTile : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && !mouseDown && !isDragging)
+        if (Input.GetMouseButton(0) && !mouseDown && !isDragging && CanRotate)
         {
             Vector3 stw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Rect rect = new Rect(gameObject.transform.position - gameObject.transform.localScale / 2, gameObject.transform.localScale);
@@ -115,6 +121,12 @@ public class DropTile : MonoBehaviour
         this.Right = right;
         this.Top = top;
         this.Bottom = bottom;
+    }
+
+    public void AddModifiers(EnemyBehaviour behaviour)
+    {
+        behaviour.Speed *= _connectedTile.SpeedModifier;
+        behaviour.Speed = Math.Max(behaviour.Speed, behaviour.SpeedMax);
     }
 
     public DropTile GetRandomNextTile(DropTile ignoreTile) {
