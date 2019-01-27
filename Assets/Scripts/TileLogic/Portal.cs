@@ -12,6 +12,10 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
+        if(transform.parent != null)
+        {
+            transform.parent = null;
+        }
         Renderer.sprite = IsExit ? ExitAnimation.GetNext() : EntryAnimation.GetNext();
         transform.Rotate(0, 0, 100.0f * Time.deltaTime);
     }
