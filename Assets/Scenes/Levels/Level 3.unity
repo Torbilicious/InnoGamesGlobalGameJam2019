@@ -1816,22 +1816,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2483331954468922716, guid: 913cdf06f5ca48144939dd8780851ccd,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2483331952988693355, guid: 913cdf06f5ca48144939dd8780851ccd,
         type: 3}
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2483331954376972223, guid: 913cdf06f5ca48144939dd8780851ccd,
+    - target: {fileID: 2483331954468922716, guid: 913cdf06f5ca48144939dd8780851ccd,
         type: 3}
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2483331954920861460, guid: 913cdf06f5ca48144939dd8780851ccd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483331954376972223, guid: 913cdf06f5ca48144939dd8780851ccd,
         type: 3}
       propertyPath: m_Layer
       value: 5
@@ -2007,6 +2007,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5547743201495557972, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
+        type: 3}
+      propertyPath: startTile
+      value: 
+      objectReference: {fileID: 686321901}
     - target: {fileID: 8390367143219542719, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2017,6 +2022,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.084
       objectReference: {fileID: 0}
+    - target: {fileID: 2628576382940089879, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 870586549839618326, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2026,16 +2036,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547743201495557972, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
-        type: 3}
-      propertyPath: startTile
-      value: 
-      objectReference: {fileID: 686321901}
-    - target: {fileID: 2628576382940089879, guid: 4335ee2da58101a45a6e68e77bf0e6bb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4335ee2da58101a45a6e68e77bf0e6bb, type: 3}
@@ -2054,7 +2054,7 @@ PrefabInstance:
     - target: {fileID: 8849667068183206116, guid: 6811443e058ef954f8e12b21dc9ebdfa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8849667068183206112, guid: 6811443e058ef954f8e12b21dc9ebdfa,
         type: 3}
