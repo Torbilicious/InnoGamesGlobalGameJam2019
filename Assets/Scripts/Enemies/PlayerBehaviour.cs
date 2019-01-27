@@ -27,10 +27,13 @@ public class PlayerBehaviour : MonoBehaviour
     public Animation2D AnimationRun;
     public Animation2D AnimationDust;
     public Animation2D AnimationDead;
+    public Animation2D AnimationIdle;
 
     public GameObject Shadow;
 
     private bool firstTileSet = false;
+
+    private bool spawn = true;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -63,9 +66,11 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 firstTileSet = true;
                 tileDestination.CanRotate = false;
+                spawn = false;
             }
             else
             {
+                SetAnimation();
                 return;
             }
         }
@@ -122,7 +127,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     void SetAnimation()
     {
-        if (GameState.isDead)
+        if(spawn)
+        {
+            RendererRun.sprite = AnimationIdle.GetNext();
+            RendererDust.sprite = null;
+        }
+        else if (GameState.isDead)
         {
             RendererRun.sprite = AnimationDead.GetNext();
             RendererDust.sprite = null;

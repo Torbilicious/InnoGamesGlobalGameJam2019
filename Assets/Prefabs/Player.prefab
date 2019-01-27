@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5547743201495557972}
   - component: {fileID: 7108552162280229393}
   - component: {fileID: 4320310018696860154}
+  - component: {fileID: 3771011166097059060}
   - component: {fileID: 4201985636772426228}
   - component: {fileID: 4158386445522549739}
   - component: {fileID: 1710157434717690324}
@@ -110,6 +111,7 @@ MonoBehaviour:
   AnimationRun: {fileID: 7108552162280229393}
   AnimationDust: {fileID: 4483363160052945577}
   AnimationDead: {fileID: 4320310018696860154}
+  AnimationIdle: {fileID: 3771011166097059060}
   Shadow: {fileID: 8732478164780135396}
 --- !u!114 &7108552162280229393
 MonoBehaviour:
@@ -126,6 +128,7 @@ MonoBehaviour:
   Sprite: walk_animation
   RunSpeed: 40
   Loop: 1
+  Headless: 0
 --- !u!114 &4320310018696860154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +144,23 @@ MonoBehaviour:
   Sprite: dead_animation
   RunSpeed: 40
   Loop: 0
+  Headless: 0
+--- !u!114 &3771011166097059060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147392758470349165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: idle_player
+  RunSpeed: 40
+  Loop: 1
+  Headless: 0
 --- !u!70 &4201985636772426228
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -430,6 +450,7 @@ MonoBehaviour:
   Sprite: dust_animation
   RunSpeed: 20
   Loop: 1
+  Headless: 0
 --- !u!1001 &7398520368512651352
 PrefabInstance:
   m_ObjectHideFlags: 0
