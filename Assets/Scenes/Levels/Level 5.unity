@@ -870,6 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 6
+  bgSound: {fileID: 651149475}
 --- !u!1001 &989012731
 PrefabInstance:
   m_ObjectHideFlags: 0
