@@ -9,12 +9,17 @@ public class Level : MonoBehaviour
 
     public AudioSource bgSound;
 
+    public AudioClip dieSound;
+
+    private bool diePlayed = false; 
+
     // Start is called before the first frame update
     void Start()
     {
         GameState.Reset();
         GameState.nexLevel = nextLevel;
         _droppedTiles = new Dictionary<Vector2, DropTile>();
+        diePlayed = false;
     }
 
     // Update is called once per frame
@@ -24,6 +29,11 @@ public class Level : MonoBehaviour
         {
             if(GameState.isDead) {
                 bgSound.pitch = 0.6f;
+                if(!diePlayed)
+                {
+                    AudioSource.PlayClipAtPoint(dieSound,new Vector3(0.0f, 0.0f, -6.0f), 6.5f);
+                    diePlayed = true;
+                }
             } else {
                 bgSound.pitch = 1.0f;
             }
