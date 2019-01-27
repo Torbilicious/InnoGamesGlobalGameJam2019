@@ -1449,7 +1449,7 @@ Transform:
   m_LocalScale: {x: 0.15596583, y: 0.15596583, z: 0.15596583}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20.008001}
 --- !u!1001 &1201356428
 PrefabInstance:
@@ -1701,6 +1701,11 @@ PrefabInstance:
       propertyPath: isDragging
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
+        type: 3}
+      propertyPath: CanRotate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25438f72548d7c341ab6f1d892a0c2d1, type: 3}
 --- !u!4 &1306775724 stripped
@@ -1798,7 +1803,7 @@ Transform:
   m_LocalScale: {x: 0.19243044, y: 0.1840541, z: 0.15253767}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.127}
 --- !u!1 &1387517956
 GameObject:
@@ -2725,6 +2730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isPreset
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925244033336241697, guid: 35e32dbfb2348f943af60160dfb5576e,
+        type: 3}
+      propertyPath: CanRotate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e32dbfb2348f943af60160dfb5576e, type: 3}
