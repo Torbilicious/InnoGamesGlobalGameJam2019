@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     public PauseMenu pause;
+    public GameObject replay;
+    public GameObject menu;
     // Start is called before the first frame update
     public void ReloadScene()
     {
@@ -15,5 +17,7 @@ public class GameUI : MonoBehaviour
     public void LoadPause()
     {
         pause.Pause();
+        replay.SetActive(false);
+        menu.SetActive(false);
     }
 }

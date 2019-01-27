@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: 0}
+  replay: {fileID: 2094337262332180543}
+  menu: {fileID: 2094337261673957418}
 --- !u!1 &2094337261673957418
 GameObject:
   m_ObjectHideFlags: 0

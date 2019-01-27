@@ -10,6 +10,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject PauseMenuBackground;
 
+    public GameObject menu;
+    public GameObject replay;
+
     private void Start()
     {
         PauseMenuBackground.SetActive(false);
@@ -35,8 +38,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+       
         Time.timeScale = 1f;
         GameIsPaused = false;
+        replay.SetActive(true);
+        menu.SetActive(true);
         PauseMenuBackground.SetActive(false);
         PauseMenuUI.SetActive(false);
         
