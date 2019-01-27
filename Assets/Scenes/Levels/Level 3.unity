@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.146
       objectReference: {fileID: 0}
+    - target: {fileID: 2628576382940089879, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3351168970706028865, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
         type: 3}
       propertyPath: m_Enabled
@@ -369,11 +374,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Simulated
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2628576382940089879, guid: 52b7c49ce62fb294cb20ae01d1a8c73b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b7c49ce62fb294cb20ae01d1a8c73b, type: 3}
@@ -750,6 +750,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isGoal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
+        type: 3}
+      propertyPath: CanRotate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25438f72548d7c341ab6f1d892a0c2d1, type: 3}
@@ -1397,6 +1402,11 @@ PrefabInstance:
     - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
         type: 3}
       propertyPath: isDragging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
+        type: 3}
+      propertyPath: CanRotate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

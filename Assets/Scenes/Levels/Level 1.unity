@@ -190,16 +190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileEnd
       objectReference: {fileID: 0}
-    - target: {fileID: 8203418297380114396, guid: 67de6c951c67d9543ae880c9e349936c,
-        type: 3}
-      propertyPath: isPreset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203418297380114396, guid: 67de6c951c67d9543ae880c9e349936c,
-        type: 3}
-      propertyPath: isGoal
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1327198645895970801, guid: 67de6c951c67d9543ae880c9e349936c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,6 +248,21 @@ PrefabInstance:
     - target: {fileID: 1537004251317988207, guid: 67de6c951c67d9543ae880c9e349936c,
         type: 3}
       propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 67de6c951c67d9543ae880c9e349936c,
+        type: 3}
+      propertyPath: isPreset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 67de6c951c67d9543ae880c9e349936c,
+        type: 3}
+      propertyPath: isGoal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 67de6c951c67d9543ae880c9e349936c,
+        type: 3}
+      propertyPath: CanRotate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -468,15 +473,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 1537004251317988207, guid: 25438f72548d7c341ab6f1d892a0c2d1,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
         type: 3}
       propertyPath: isPreset
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203418297380114396, guid: 25438f72548d7c341ab6f1d892a0c2d1,
+        type: 3}
+      propertyPath: CanRotate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537004251317988207, guid: 25438f72548d7c341ab6f1d892a0c2d1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25438f72548d7c341ab6f1d892a0c2d1, type: 3}
