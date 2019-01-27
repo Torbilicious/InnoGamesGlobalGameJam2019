@@ -1578,7 +1578,7 @@ PrefabInstance:
     - target: {fileID: 6293588550098804797, guid: 8ecb0bc676660ba4bad20ec76ea4a384,
         type: 3}
       propertyPath: timer
-      value: 28
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb0bc676660ba4bad20ec76ea4a384, type: 3}
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798802212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f6ea73bd5b754b9a9e8fc6691e215ea, type: 3}
   m_Name: 
