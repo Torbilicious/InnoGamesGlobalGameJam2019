@@ -26,15 +26,11 @@ public class Timer : MonoBehaviour
             }
 
             float relativeTime = timer / timerStart;
-            float rotDir = (((int)(timer) % 2) * 2.0f) - 1.0f;
-            Debug.Log(rotDir);
+            float rotDir = ((int)timer % 2) * 2.0f - 1.0f;
 
             transform.localScale = new Vector3(relativeTime, relativeTime, 1.0f);
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotDir * 25.0f);
             gameObject.GetComponent<Renderer>().material.SetColor("_Color", new Color(1.0f, relativeTime, relativeTime));
-
-            Debug.Log(relativeTime);
-            Debug.Log(timer);
         }
     }
 }

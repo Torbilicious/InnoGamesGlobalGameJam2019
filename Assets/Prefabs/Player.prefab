@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 549238072191116538}
   - component: {fileID: 5547743201495557972}
   - component: {fileID: 7108552162280229393}
+  - component: {fileID: 4320310018696860154}
   - component: {fileID: 4201985636772426228}
   - component: {fileID: 4158386445522549739}
+  - component: {fileID: 1710157434717690324}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -29,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147392758470349165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0.146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3379512351914415443}
@@ -107,6 +109,8 @@ MonoBehaviour:
   RendererDust: {fileID: 8301558380698599822}
   AnimationRun: {fileID: 7108552162280229393}
   AnimationDust: {fileID: 4483363160052945577}
+  AnimationDead: {fileID: 4320310018696860154}
+  Shadow: {fileID: 8732478164780135396}
 --- !u!114 &7108552162280229393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +125,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: walk_animation
   RunSpeed: 40
+  Loop: 1
+--- !u!114 &4320310018696860154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147392758470349165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: dead_animation
+  RunSpeed: 40
+  Loop: 0
 --- !u!70 &4201985636772426228
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,6 +178,102 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!82 &1710157434717690324
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147392758470349165}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 03ab58ef203951d4aa5a313659fba231, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2628576382940089879
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +285,7 @@ GameObject:
   - component: {fileID: 3379512351914415443}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: dust_animation
   RunSpeed: 20
+  Loop: 1
 --- !u!1001 &7398520368512651352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +499,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa919cd4cbb943ea95d8ed84a9082be, type: 3}
+--- !u!1 &8732478164780135396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2270708719398642620, guid: 6aa919cd4cbb943ea95d8ed84a9082be,
+    type: 3}
+  m_PrefabInstance: {fileID: 7398520368512651352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6484766656372841785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4562806103478816097, guid: 6aa919cd4cbb943ea95d8ed84a9082be,
