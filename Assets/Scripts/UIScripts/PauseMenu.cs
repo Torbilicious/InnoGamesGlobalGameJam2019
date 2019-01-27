@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("SplashScreen");
     }
 
-    void Pause()
+    public void Pause()
     {
         Time.timeScale = 0f;
         GameIsPaused = true;
