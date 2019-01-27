@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 549238072191116538}
   - component: {fileID: 5547743201495557972}
   - component: {fileID: 7108552162280229393}
+  - component: {fileID: 4784085312139500344}
   - component: {fileID: 3532820547080770191}
   - component: {fileID: 2774571829033921555}
   m_Layer: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   RendererDust: {fileID: 8301558380698599822}
   AnimationRun: {fileID: 7108552162280229393}
   AnimationDust: {fileID: 4483363160052945577}
+  AnimationSpawn: {fileID: 4784085312139500344}
 --- !u!114 &7108552162280229393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +122,22 @@ MonoBehaviour:
   Sprite: walk_enemie
   RunSpeed: 40
   Loop: 1
+  Headless: 0
+--- !u!114 &4784085312139500344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147392758470349165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: spawn_enemy
+  RunSpeed: 40
+  Loop: 0
   Headless: 0
 --- !u!70 &3532820547080770191
 CapsuleCollider2D:

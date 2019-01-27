@@ -22,6 +22,9 @@ public class EnemyBehaviour : MonoBehaviour
     public SpriteRenderer RendererDust;
     public Animation2D AnimationRun;
     public Animation2D AnimationDust;
+    public Animation2D AnimationSpawn;
+
+    private bool spawn = true;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -41,6 +44,12 @@ public class EnemyBehaviour : MonoBehaviour
         if (tileDestination == null) 
         {
             tileDestination = startTile.GetRandomNextTile(startTile) ?? startTile;
+        }
+
+        if(spawn)
+        {
+            SetAnimation();
+            return;
         }
         
         _currentSpeed = Speed * Time.deltaTime;
@@ -84,7 +93,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     void SetAnimation()
     {
-        RendererRun.sprite = AnimationRun.GetNext();
-        RendererDust.sprite = AnimationDust.GetNext();
+        if(spawn)
+        {
+            RendererRun.sprite = AnimationSpawn.GetNext();
+            RendererDust.sprite = null;
+
+            spawn = !AnimationSpawn.IsFinished();
+        }
+        else
+        {
+            RendererRun.sprite = AnimationRun.GetNext();
+            RendererDust.sprite = AnimationDust.GetNext();
+        }
     }
 }
