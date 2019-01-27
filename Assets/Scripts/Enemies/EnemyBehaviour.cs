@@ -8,10 +8,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public DropTile startTile;
 
-    public float FearLevel = 0;
-
-    public float FearLevelMax = 100;
-
     public float Speed = 1.0f;
 
     public float SpeedMax = 2.0f;
@@ -27,13 +23,12 @@ public class EnemyBehaviour : MonoBehaviour
     public Animation2D AnimationRun;
     public Animation2D AnimationDust;
 
-    private bool firstTileSet = false;
-
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
     void Start()
     {
+        startTile.EnemyOnTile = true;
     }
 
     /// <summary>
@@ -43,48 +38,41 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if(GameState.isDead)return;
 
-        //Wait until the first tile has been placed and the game begins
-        if(!firstTileSet)
+        if (tileDestination == null) 
         {
-            tileDestination = startTile.GetRandomNextTile(startTile);
-            if (tileDestination != null)
-            {
-                firstTileSet = true;
-                tileDestination.CanRotate = false;
-            }
-            else
-            {
-                return;
-            }
+            tileDestination = startTile.GetRandomNextTile(startTile) ?? startTile;
         }
-
-        _currentSpeed = (Speed + SpeedMax * (FearLevel / FearLevelMax)) * Time.deltaTime;
+        
+        _currentSpeed = Speed * Time.deltaTime;
 
         Vector3 targetPos = tileDestination.transform.position;
         targetPos.z = transform.position.z;
+
+        if(!startTile.IsNextTileValid(tileDestination))
+        {
+             transform.position = startTile.transform.position;
+             tileDestination.EnemyOnTile = false;
+             startTile.EnemyOnTile = true;
+             tileDestination = startTile;
+             return;
+        }
 
         // move to next tile
         if( (targetPos - transform.position).magnitude < 0.01f)
         {
             transform.position = targetPos;
 
-            if(tileDestination.isGoal) {
-                winLevel();
-                return;                
-            }
-
-            tileDestination.AddModifiers(this);
             DropTile nextStartTile = tileDestination;
             tileDestination = tileDestination.GetRandomNextTile(startTile);
             //There is no next tile
             if(tileDestination == null)
             {
-                Die();
-                return;
+                tileDestination = startTile;
             }
             
+            startTile.EnemyOnTile = false;
             startTile = nextStartTile;
-            nextStartTile.CanRotate = false;
+            startTile.EnemyOnTile = true;
         }
         else
         {
@@ -92,35 +80,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         SetAnimation();
-
-        if(this.FearLevel >= this.FearLevelMax)
-        {
-            //TODO: Was soll passieren, wenn FearLevel voll ist??
-        }
     }
 
     void SetAnimation()
     {
         RendererRun.sprite = AnimationRun.GetNext();
         RendererDust.sprite = AnimationDust.GetNext();
-    }
-
-    public void Die()
-    {
-        GameState.isDead = true;
-        GameObject.Find("GameOverUI").gameObject.GetComponent<GameOver>().Show();
-    }
-
-    public void winLevel()
-    {
-        SceneManager.LoadScene("WinningScreen");
-    }
-
-    public void TeleportTo(DropTile tile)
-    {
-        Vector3 target = tile.transform.position;
-        target.z = transform.position.z;
-        transform.position = target;
-        tileDestination = tile;
     }
 }

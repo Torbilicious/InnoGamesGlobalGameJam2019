@@ -32,6 +32,7 @@ public class DropTile : MonoBehaviour
     private bool mouseDown;
 
     public bool CanRotate = true;
+    public bool EnemyOnTile = false;
 
     private LevelTile _connectedTile;
 
@@ -86,7 +87,7 @@ public class DropTile : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && !mouseDown && !isDragging && CanRotate)
+        if (Input.GetMouseButton(0) && !mouseDown && !isDragging && CanRotate && !EnemyOnTile)
         {
             Vector3 stw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Rect rect = new Rect(gameObject.transform.position - gameObject.transform.localScale / 2, gameObject.transform.localScale);
@@ -174,7 +175,7 @@ public class DropTile : MonoBehaviour
         this.Bottom = bottom;
     }
 
-    public void AddModifiers(EnemyBehaviour behaviour)
+    public void AddModifiers(PlayerBehaviour behaviour)
     {
         if (_connectedTile == null) return;
 
@@ -192,6 +193,16 @@ public class DropTile : MonoBehaviour
                 behaviour.Die();
             }
         }
+    }
+
+    public bool IsNextTileValid(DropTile nextTile)
+    {
+        if(nextTile == null)
+            return false;
+
+        return nextTileLeft == nextTile || nextTileRight == nextTile 
+            || nextTileTop  == nextTile || nextTileBottom == nextTile
+            || this == nextTile;
     }
 
     public DropTile GetRandomNextTile(DropTile ignoreTile) {
