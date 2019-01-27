@@ -17,6 +17,8 @@ public class DropTile : MonoBehaviour
     public DropTile nextTileLeft;
 
     private Collider2D _lastCollider;
+    private Color _lastColliderColor;
+    private float _lastColliderDistance = float.MaxValue;
 
     public SpawnableItem SpawnableItem;
 
@@ -53,31 +55,34 @@ public class DropTile : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
-        }
-        if ( (isDragging && !Input.GetMouseButton(0)))
-        {
-            if (_lastCollider != null && Collides())
-            {
-                _lastCollider.GetComponent<LevelTile>().HandleTileSet();
-                this.transform.position = _lastCollider.transform.position;
-                _connectedTile = _lastCollider.gameObject.GetComponent<LevelTile>();
-                _lastCollider.gameObject.SetActive(false);
-                isDragging = false;
-                if (SpawnableItem != null)
-                {
-                    SpawnableItem.Reset(PLACED);
-                }
-                level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
 
-                if(_connectedTile.PortalTo != null)
-                {
-                    //TODO: Portal-Animation aktivieren
-                }
-            }
-            else
+            UpdateCollider();
+
+            if (!Input.GetMouseButton(0))
             {
-                SpawnableItem.Reset(CANCEL);
-                Destroy(gameObject);
+                if (_lastCollider != null)
+                {
+                    _lastCollider.GetComponent<LevelTile>().HandleTileSet();
+                    this.transform.position = _lastCollider.transform.position;
+                    _connectedTile = _lastCollider.gameObject.GetComponent<LevelTile>();
+                    _lastCollider.gameObject.SetActive(false);
+                    isDragging = false;
+                    if (SpawnableItem != null)
+                    {
+                        SpawnableItem.Reset(PLACED);
+                    }
+                    level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
+
+                    if(_connectedTile.PortalTo != null)
+                    {
+                        //TODO: Portal-Animation aktivieren
+                    }
+                }
+                else
+                {
+                    SpawnableItem.Reset(CANCEL);
+                    Destroy(gameObject);
+                }
             }
         }
 
@@ -95,24 +100,60 @@ public class DropTile : MonoBehaviour
         ConnectTiles(false);
     }
 
-    private bool Collides()
+    private void UpdateCollider()
     {
-        Vector3 center = GetComponent<Renderer>().bounds.center;
-        Vector3 diff = center - _lastCollider.gameObject.transform.position;
-        return diff.x < 0.3f && diff.y < 0.3f;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isDragging)
+        if(_lastCollider)
         {
-            //Input.GetMouseButton(0)
-            //Debug.Log(other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked);
-            if (other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked)
+            float currentDistance = getColliderDistance(_lastCollider);
+            if(currentDistance > 1.5f)
             {
-                _lastCollider = other;
+                ResetCollider();
             }
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (isDragging && other.CompareTag("Tile") && !other.GetComponent<LevelTile>().IsBlocked)
+        {
+            float distance = getColliderDistance(other);
+
+            if(other == _lastCollider) // update distance if the collider stays the same
+            {
+                _lastColliderDistance = distance;
+            } 
+            else if(distance < _lastColliderDistance) // otherwise check if a new one is closer
+            {
+                ResetCollider();
+            
+                _lastCollider = other;
+                _lastColliderDistance = distance;
+
+                Material mat = _lastCollider.gameObject.GetComponent<Renderer>().material; // highlight tile
+                _lastColliderColor = mat.GetColor("_Color");
+                mat.SetColor("_Color", new Color(1.25f, 1.25f, 1.25f));
+            }
+        }
+    }
+    
+    public void ResetCollider()
+    {
+        if(_lastCollider)
+        {
+            Material mat = _lastCollider.gameObject.GetComponent<Renderer>().material;
+            mat.SetColor("_Color", _lastColliderColor);
+        }
+
+        _lastCollider = null;
+        _lastColliderDistance = float.MaxValue;
+    }
+
+    private float getColliderDistance(Collider2D other)
+    {
+        return (
+            new Vector2(other.transform.position.x, other.transform.position.y) -
+            new Vector2(transform.position.x, transform.position.y)
+        ).magnitude;
     }
 
     private void OnManualMouseDown()
