@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static ResetCause;
@@ -46,6 +45,7 @@ public class DropTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(isPreset) 
         {
            level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
@@ -163,7 +163,7 @@ public class DropTile : MonoBehaviour
             AudioSource.PlayClipAtPoint(rotateSound, transform.position, rotateSoundVolume);
 
         bool left = false, right = false, top = false, bottom = false;
-        this.transform.Rotate(0, 0, -90);
+        this.transform.Rotate(0, 10, -90);
         if (this.Left) { top = true; }
         if (this.Top) { right = true; }
         if (this.Right) { bottom = true; }
