@@ -26,6 +26,9 @@ public class PlayerBehaviour : MonoBehaviour
     public SpriteRenderer RendererDust;
     public Animation2D AnimationRun;
     public Animation2D AnimationDust;
+    public Animation2D AnimationDead;
+
+    public GameObject Shadow;
 
     private bool firstTileSet = false;
 
@@ -41,7 +44,16 @@ public class PlayerBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if(GameState.isDead)return;
+        if (GameState.isDead)
+        {
+            SetAnimation();
+
+            if(AnimationDead.IsFinished())
+            {
+                GameObject.Find("GameOverUI").gameObject.GetComponent<GameOver>().Show();
+            }
+            return;
+        }
 
         //Wait until the first tile has been placed and the game begins
         if(!firstTileSet)
@@ -110,14 +122,22 @@ public class PlayerBehaviour : MonoBehaviour
 
     void SetAnimation()
     {
-        RendererRun.sprite = AnimationRun.GetNext();
-        RendererDust.sprite = AnimationDust.GetNext();
+        if (GameState.isDead)
+        {
+            RendererRun.sprite = AnimationDead.GetNext();
+            RendererDust.sprite = null;
+        }
+        else
+        {
+            RendererRun.sprite = AnimationRun.GetNext();
+            RendererDust.sprite = AnimationDust.GetNext();
+        }
     }
 
     public void Die()
     {
         GameState.isDead = true;
-        GameObject.Find("GameOverUI").gameObject.GetComponent<GameOver>().Show();
+        Shadow.SetActive(false);
     }
 
     public void winLevel()
