@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    public GameObject[] TilesToSpawn;
-    private GameObject currentTile;
+    //public GameObject[] TilesToSpawn;
+   // private GameObject currentTile;
 
     private void Start()
     {
-        currentTile = getRandomTile();
+        //currentTile = getRandomTile();
         //applySpriteFromMimickedTile();
     }
 
@@ -23,21 +23,21 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-        transform.localPosition = Vector3.zero;
+        /*transform.localPosition = Vector3.zero;
         var tileToSpawn = currentTile;
 
         var tile = Instantiate(tileToSpawn, gameObject.transform, true);
-        Debug.Log(tile);
+        Debug.Log(tile);*/
         //tile.transform.parent = null;
         //tile.GetComponent<DropTile>().SpawnableItem = this;
 
         //gameObject.active = false;
         //throw new System.NotImplementedException();
     }
-    private GameObject getRandomTile()
+   /* private GameObject getRandomTile()
     {
         return TilesToSpawn[Random.Range(0, TilesToSpawn.Length)];
-    }
+    }*/
 
 
 }

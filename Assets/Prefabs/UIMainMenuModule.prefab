@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.099976, y: -198.79999}
+  m_AnchoredPosition: {x: -1, y: -198.79999}
   m_SizeDelta: {x: -1452.3, y: -624.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1459336161316470326
@@ -484,7 +484,7 @@ PrefabInstance:
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33
+      value: -2.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
@@ -539,6 +539,11 @@ PrefabInstance:
     - target: {fileID: 2041335166372738973, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041335165678169509, guid: a77403a9f96b5db458f204d90aa0a1e3,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169499, guid: a77403a9f96b5db458f204d90aa0a1e3,
@@ -634,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33
+      value: -2.9000206
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
@@ -680,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041335165678169509, guid: a77403a9f96b5db458f204d90aa0a1e3,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169499, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
@@ -774,7 +784,7 @@ PrefabInstance:
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33
+      value: -2.9000206
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169498, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
@@ -820,6 +830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041335165678169509, guid: a77403a9f96b5db458f204d90aa0a1e3,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2041335165678169499, guid: a77403a9f96b5db458f204d90aa0a1e3,
         type: 3}
