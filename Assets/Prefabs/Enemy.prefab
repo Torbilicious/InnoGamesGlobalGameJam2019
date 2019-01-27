@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: walk_animation
   RunSpeed: 40
+  Loop: 1
 --- !u!70 &3532820547080770191
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: dust_animation
   RunSpeed: 20
+  Loop: 1
 --- !u!1001 &6509037905350323729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,6 +379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7788837290395176916, guid: 6aa919cd4cbb943ea95d8ed84a9082be,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa919cd4cbb943ea95d8ed84a9082be, type: 3}
