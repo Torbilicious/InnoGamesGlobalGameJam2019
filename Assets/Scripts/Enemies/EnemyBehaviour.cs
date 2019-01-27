@@ -41,6 +41,8 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(GameState.isDead)return;
+
         //Wait until the first tile has been placed and the game begins
         if(!firstTileSet)
         {
@@ -105,8 +107,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Die()
     {
-        //TODO: Game Over
-        Destroy(this.gameObject);
+        GameState.isDead = true;
+        GameObject.Find("GameOverUI").gameObject.GetComponent<GameOver>().Show();
     }
 
     public void winLevel()

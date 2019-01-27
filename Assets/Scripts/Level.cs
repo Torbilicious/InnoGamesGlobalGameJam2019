@@ -10,6 +10,8 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameState.Reset();
+        
         Debug.Log("set next level:");
         GameState.nexLevel = nextLevel;
         Debug.Log(GameState.nexLevel);
