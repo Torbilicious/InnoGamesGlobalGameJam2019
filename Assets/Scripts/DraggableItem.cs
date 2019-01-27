@@ -8,7 +8,6 @@ public class DraggableItem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("test");
         var position = gameObject.transform.position;
 
         screenPoint = Camera.main.WorldToScreenPoint(position);
@@ -30,6 +29,6 @@ public class DraggableItem : MonoBehaviour
     private void OnMouseUp()
     {
         var hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hoverHit);
-        Debug.Log("Hit: " + (hit && hoverHit.transform.tag.Equals("PlaceableArea")));
+//        Debug.Log("Hit: " + (hit && hoverHit.transform.tag.Equals("PlaceableArea")));
     }
 }

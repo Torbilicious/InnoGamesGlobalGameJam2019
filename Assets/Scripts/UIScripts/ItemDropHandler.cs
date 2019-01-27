@@ -11,7 +11,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
 
         if (!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
         {
-            Debug.Log("Drop item");
+//            Debug.Log("Drop item");
         }
         //throw new System.NotImplementedException();
     }

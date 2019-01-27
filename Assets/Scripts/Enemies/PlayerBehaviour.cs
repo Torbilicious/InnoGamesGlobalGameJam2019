@@ -101,7 +101,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.name);
+//        Debug.Log(col.name);
         if(col.gameObject.CompareTag("Enemy"))
         {
             Die();
