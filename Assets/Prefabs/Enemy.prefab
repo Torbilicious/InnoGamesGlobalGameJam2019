@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300030, guid: 28d95a9f2301aff44a3d134287323b41, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 928150431234b0742850a0cfe7817989, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: walk_animation
+  Sprite: walk_enemie
   RunSpeed: 40
   Loop: 1
+  Headless: 0
 --- !u!70 &3532820547080770191
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -313,6 +314,7 @@ MonoBehaviour:
   Sprite: dust_animation
   RunSpeed: 20
   Loop: 1
+  Headless: 0
 --- !u!1001 &6509037905350323729
 PrefabInstance:
   m_ObjectHideFlags: 0
