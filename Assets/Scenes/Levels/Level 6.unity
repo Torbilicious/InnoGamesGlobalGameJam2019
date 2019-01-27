@@ -1438,6 +1438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: 7
   bgSound: {fileID: 651149475}
+  dieSound: {fileID: 8300000, guid: fca315afe74469f4583e4eaa5f2932fa, type: 3}
 --- !u!1001 &976426727
 PrefabInstance:
   m_ObjectHideFlags: 0
