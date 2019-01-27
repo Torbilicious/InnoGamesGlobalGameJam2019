@@ -46,7 +46,7 @@ public class PlayerBehaviour : MonoBehaviour
         //Wait until the first tile has been placed and the game begins
         if(!firstTileSet)
         {
-            tileDestination = startTile.GetRandomNextTile(startTile);
+            tileDestination = startTile?.GetRandomNextTile(startTile);
             if (tileDestination != null)
             {
                 firstTileSet = true;
