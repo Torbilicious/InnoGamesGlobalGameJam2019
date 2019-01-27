@@ -1,0 +1,1863 @@
+fileFormatVersion: 2
+guid: 4b135648d8a14744a9976ee2d7438803
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dead_animation_0
+    21300002: dead_animation_1
+    21300004: dead_animation_2
+    21300006: dead_animation_3
+    21300008: dead_animation_4
+    21300010: dead_animation_5
+    21300012: dead_animation_6
+    21300014: dead_animation_7
+    21300016: dead_animation_8
+    21300018: dead_animation_9
+    21300020: dead_animation_10
+    21300022: dead_animation_11
+    21300024: dead_animation_12
+    21300026: dead_animation_13
+    21300028: dead_animation_14
+    21300030: dead_animation_15
+    21300032: dead_animation_16
+    21300034: dead_animation_17
+    21300036: dead_animation_18
+    21300038: dead_animation_19
+    21300040: dead_animation_20
+    21300042: dead_animation_21
+    21300044: dead_animation_22
+    21300046: dead_animation_23
+    21300048: dead_animation_24
+    21300050: dead_animation_25
+    21300052: dead_animation_26
+    21300054: dead_animation_27
+    21300056: dead_animation_28
+    21300058: dead_animation_29
+    21300060: dead_animation_30
+    21300062: dead_animation_31
+    21300064: dead_animation_32
+    21300066: dead_animation_33
+    21300068: dead_animation_34
+    21300070: dead_animation_35
+    21300072: dead_animation_36
+    21300074: dead_animation_37
+    21300076: dead_animation_38
+    21300078: dead_animation_39
+    21300080: dead_animation_40
+    21300082: dead_animation_41
+    21300084: dead_animation_42
+    21300086: dead_animation_43
+    21300088: dead_animation_44
+    21300090: dead_animation_45
+    21300092: dead_animation_46
+    21300094: dead_animation_47
+    21300096: dead_animation_48
+    21300098: dead_animation_49
+    21300100: dead_animation_50
+    21300102: dead_animation_51
+    21300104: dead_animation_52
+    21300106: dead_animation_53
+    21300108: dead_animation_54
+    21300110: dead_animation_55
+    21300112: dead_animation_56
+    21300114: dead_animation_57
+    21300116: dead_animation_58
+    21300118: dead_animation_59
+    21300120: dead_animation_60
+    21300122: dead_animation_61
+    21300124: dead_animation_62
+    21300126: dead_animation_63
+    21300128: dead_animation_64
+    21300130: dead_animation_65
+    21300132: dead_animation_66
+    21300134: dead_animation_67
+    21300136: dead_animation_68
+    21300138: dead_animation_69
+    21300140: dead_animation_70
+    21300142: dead_animation_71
+    21300144: dead_animation_72
+    21300146: dead_animation_73
+    21300148: dead_animation_74
+    21300150: dead_animation_75
+    21300152: dead_animation_76
+    21300154: dead_animation_77
+    21300156: dead_animation_78
+    21300158: dead_animation_79
+    21300160: dead_animation_80
+    21300162: dead_animation_81
+    21300164: dead_animation_82
+    21300166: dead_animation_83
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 450
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dead_animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d34f8e960bcc843a1a2b957a5b7e96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d431edb3332d4d4386dfde0e0e7b00e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_2
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9225a90bf0044544bdcc474b4af3e47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_3
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6709acdbda679854abdabe39d7a8807c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_4
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b168d46c5bc993c46b5402ec3fec2250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_5
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005503351c786c64ca68c7157dbc0f53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_6
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc1678b93bed154389056756fc32bb6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_7
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68caf74820eeafb46956d57907678311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_8
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 2880
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ba52ffc9d7bbe498ef587d68cb92ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9a5f3f0610ee247a979cbe351eed13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_10
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388144b7710961645aa068566b8d6bb2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_11
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5662064b6bb9a41bb36fb435ace6c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_12
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6857880109b52af4a8feaf52a140f157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_13
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823c01ccc30d1d14bbc73a7cf4445b38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_14
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67150af90b6a374091e1cac92726d4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_15
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561e30b97fbf05541aa055b094515946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_16
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58aa133bbc19c7a4eb7ad5a9c8d538af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_17
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 2560
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4237611bd585d1545b1f083b37e8cdba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bf2d6d0ede6604398a040ed9afcf99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_19
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9563a607bc348654190e5a5635ce5dfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_20
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee24cb56e41a7b4aa918e890a42f660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_21
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbff204079eb1c438fd1dc9e7313cdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_22
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1d4c30977f4c24d9477a134b2f8661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_23
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3be8d163e35a44dacbadf1a1ecda20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_24
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e97ce9d5be1484788f9159e360fb18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_25
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e741419d49fcc459de1206defd8194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_26
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 2240
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1b117a63595f94ba1c14deb3af0591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913b2b119b07f11489e47ae25272dde7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_28
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b37d83cdef36841b1c641c4e709bca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_29
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc91e9c64941fb44824138f7931fed8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_30
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1112fcef07760194282940b3a96bf715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_31
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75ac2328d0a1244f91e86514fe98e91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_32
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b0db99b0362754b814e8ee95b0a341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_33
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b35dad850966394bae4a4123ddfdca4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_34
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8572bb100f076f749a86e44f9f276027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_35
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1920
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04148e843002e84f96dd46514dd90d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a922b7af645b3b947ad6c200862a9cd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_37
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a8d79aa9048784d86d81974d4722c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_38
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39343fe6889b2c4dbb73c999066e47a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_39
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb772c6c85d0eec468ac846e1f3ef410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_40
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8eb96b389bb06c478cfff285a779c52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_41
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bff2f53a4a464b448e21a9e76dbb288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_42
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de342a9ffc60d1e43b2d7a5b9aad0666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_43
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c866d8f07e77784eb6f79b1937047f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_44
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1600
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec67b33f03aef5645bb9659d3d0ea028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d32fd1b59249747af94b3570dd85d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_46
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312856fe5be98b544ba3a27f1b6dd6c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_47
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22500aee8736ae9408331150899e9671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_48
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368e189e3e4c5354dace78740c440f70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_49
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb69269d1e7b6814985c06949f66570e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_50
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037600ed551324540b63244b75726b07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_51
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca89545e3fbc6044b8ad79db0737bd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_52
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e40420e51da70d4faac8c90f04b8e39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_53
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1280
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170a7483ce7b7724ba2f1ac6b2c463b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387b52eca76937d43afb1f19f0bb8ff4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_55
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ad7b00057438b419f86360231c24cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_56
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75b4c4eb6b72e0448f3e645757294aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_57
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1addf53ebc5ada147953349ca599ecc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_58
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c904e7de743dfc04c9fc45b84ddecd91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_59
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9146e68933c61084da5399c83faa7d80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_60
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b611fb093c80d4ea138a08543e35e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_61
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41f3a1e5da786445a68c9be0da07d49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_62
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 960
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1178c13f59df794d8893a33baaae415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47666cd0ab5c5f849b47b8562fdfda17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_64
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb6d58d05adf434690219e261b2b5f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_65
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765aefe2d341b0c4a9527bfe0fe382af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_66
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c02afffabb871846a5173314638af6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_67
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cbe21328d121f42bf776f29422e901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_68
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd31b71d2810ce499b2c05643847732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_69
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1449a77949ee2f545842b240c66bd6c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_70
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16e06f70b710b743b6df62c5abe1243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_71
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 640
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95ca42082fc2d54db0a82847f12a66c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b005dc425867c4ea7e265d394bf719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_73
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca18cf7920ae91e49b2613baab9a210f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_74
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc01f0748b2f9154a983992a404baabd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_75
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd9eb67bdaf6764f9f84869695c9d36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_76
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664b07d24dad4ec4baa1a8b40cc626b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_77
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebfbfc436f507241ae8ff652b07fc7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_78
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ec3612312c2684f9c8cbc9be692f94
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_79
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eeae7efa786ff1429f61197078f0445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_80
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 320
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875a44ba71590de4a8e8c6fe5fa7f744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63aea810cade56746a22a53f5a12d8f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_82
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 0
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6194b701a1e07c6429179542cc518615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_animation_83
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 0
+        width: 278
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b7e39e2730dfe45a0f6381ace4c049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e60effcfe3f1fe44d95a11f34df6ae77
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
