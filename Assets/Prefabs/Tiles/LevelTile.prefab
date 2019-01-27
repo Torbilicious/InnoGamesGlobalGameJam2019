@@ -226,6 +226,5 @@ MonoBehaviour:
   Block: {fileID: 2056863135}
   dropSound: {fileID: 8300000, guid: 606345ee512222e4b8192cad3a59d2e7, type: 3}
   SpeedModifier: 1
-  PortalPrefab: {fileID: 825808617247339885, guid: b45261d3b40c7cc4aa847d104b6d2257,
-    type: 3}
+  PortalPrefab: {fileID: 0}
   PortalTo: {fileID: 0}

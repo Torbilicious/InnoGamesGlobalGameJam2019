@@ -11,10 +11,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         GameState.Reset();
-        
-        Debug.Log("set next level:");
         GameState.nexLevel = nextLevel;
-        Debug.Log(GameState.nexLevel);
         _droppedTiles = new Dictionary<Vector2, DropTile>();
     }
 

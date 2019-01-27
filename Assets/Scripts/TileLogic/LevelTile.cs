@@ -71,7 +71,10 @@ public class LevelTile : MonoBehaviour
 
     private void CreatePortal()
     {
-        var portal = Instantiate(PortalPrefab, transform, false);
-        portal.GetComponent<Portal>().IsExit = _portal == Portals.EXIT;
+        if(PortalPrefab)
+        {
+            var portal = Instantiate(PortalPrefab, transform, false);
+            portal.GetComponent<Portal>().IsExit = _portal == Portals.EXIT;
+        }
     }
 }
