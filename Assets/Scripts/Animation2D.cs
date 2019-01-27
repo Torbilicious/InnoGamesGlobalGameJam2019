@@ -9,6 +9,8 @@ public class Animation2D : MonoBehaviour
 
     public bool Loop = true;
 
+    public bool Headless = false;
+
     private Sprite[] _sprite;
     private int _currentSprite;
     private float _spriteStep;
@@ -53,5 +55,13 @@ public class Animation2D : MonoBehaviour
     public bool IsFinished()
     {
         return !Loop && _currentSprite >= _sprite.Length - 1;
+    }
+
+    private void Update()
+    {
+        if(Headless)
+        {
+            GetComponent<SpriteRenderer>().sprite = GetNext();
+        }
     }
 }
