@@ -273,7 +273,7 @@ Transform:
   - {fileID: 1724343195}
   - {fileID: 467360680}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &285448024
 PrefabInstance:
@@ -791,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 8608348066049694955, guid: e061fa5a7915461458c4c55d2f3c7cc3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8608348066049694955, guid: e061fa5a7915461458c4c55d2f3c7cc3,
         type: 3}
@@ -1679,7 +1679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b7c49ce62fb294cb20ae01d1a8c73b, type: 3}
---- !u!1001 &4007144744302480142
+--- !u!1001 &4711010557903071123
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1729,7 +1729,7 @@ PrefabInstance:
     - target: {fileID: 4007144745297153435, guid: b47f14303583bdd469ae9536d218ff1d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4007144745297153435, guid: b47f14303583bdd469ae9536d218ff1d,
         type: 3}
@@ -1796,31 +1796,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2012584995, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.025024
-      objectReference: {fileID: 0}
-    - target: {fileID: 2012584995, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1395.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2012584995, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -50.049988
-      objectReference: {fileID: 0}
-    - target: {fileID: 2012584996, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
-      propertyPath: m_Text
-      value: "Torben Binder\nAlicja Wlochowitz \nMarcel Bulla \nMaria Weninger \nElie
-        Abraham \nInga Kriz\nMax Beb\xF6k\nSvenja Kohlmann\nArtjom Fransen\n\n\n\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2012584996, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6171909751652610943, guid: b47f14303583bdd469ae9536d218ff1d,
+    - target: {fileID: 4007144745297153434, guid: b47f14303583bdd469ae9536d218ff1d,
         type: 3}
-      propertyPath: m_Text
+      propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1341940054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47f14303583bdd469ae9536d218ff1d, type: 3}
