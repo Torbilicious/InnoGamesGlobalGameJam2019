@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static ResetCause;
@@ -46,6 +45,7 @@ public class DropTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(isPreset) 
         {
            level._droppedTiles.Add(new Vector2(this.transform.position.x, this.transform.position.y), this);
