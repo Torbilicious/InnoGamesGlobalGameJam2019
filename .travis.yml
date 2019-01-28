@@ -38,6 +38,9 @@ after_success:
 #   on:
 #     tags: true 
 
+before_deploy:
+ - DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
+
 
 deploy:
   provider: releases
