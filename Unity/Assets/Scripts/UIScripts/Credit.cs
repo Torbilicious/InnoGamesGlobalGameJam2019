@@ -9,7 +9,7 @@ public class Credit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(Scene.MENU_MAIN);
         }
 
 
@@ -17,7 +17,7 @@ public class Credit : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scene.MENU_MAIN);
     }
 
 }

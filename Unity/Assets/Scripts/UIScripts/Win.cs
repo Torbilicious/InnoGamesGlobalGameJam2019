@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
@@ -11,14 +10,14 @@ public class Win : MonoBehaviour
     {
         if(GameState.nexLevel >= 0) 
         {
-            SceneManager.LoadScene("Level " + GameState.nexLevel);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level " + GameState.nexLevel);
         }else{
-            SceneManager.LoadScene("CreditMenu");
+            SceneManager.LoadScene(Scene.MENU_CREDITS);
         }
     }
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scene.MENU_MAIN);
     }
 }

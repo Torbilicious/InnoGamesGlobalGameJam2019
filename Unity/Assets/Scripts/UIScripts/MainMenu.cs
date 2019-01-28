@@ -14,12 +14,12 @@ public class MainMenu : MonoBehaviour
         }
 
         GameState.Reset();
-        SceneManager.LoadScene("Level 1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
     }
 
     public void LoadCredits()
     {
-        SceneManager.LoadScene("CreditMenu");
+        SceneManager.LoadScene(Scene.MENU_CREDITS);
     }
 
     public void QuitGame()
