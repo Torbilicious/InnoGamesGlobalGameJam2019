@@ -13,21 +13,21 @@ Drag and Drop the street tiles and turn the road in the direction of your home :
 Achievement Unlocked: Under the Influence - The main character or vehicle can only be controlled indirectly. Example: placing barriers or obstacles to influence the movement.
 
 
-##Created by Black Pipe Down
+## Created by Black Pipe Down
 
-###Visuals
+### Visuals
 Maria Weninger
 Inga Kriz
 Svenja Kohlmann
 
-###Programmers
+### Programmers
 Torben Binder
 Alicja Wlochowitz
 Marcel Bulla
 Max Bebök
 
-###Game Design/Management
+### Game Design/Management
 Artjom Fransen
 
-###Soundtrack
+### Soundtrack
 Elie Abraham
