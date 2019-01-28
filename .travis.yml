@@ -13,18 +13,18 @@ cache:
 
     
 before_install:
-- chmod a+x ./travis-build/*.sh
+- chmod a+x ./Unity/travis-build/*.sh
 
 install:
 - cat /etc/hosts
-- ./travis-build/install-unity.sh
+- ./Unity/travis-build/install-unity.sh
 
 script:
-- ./travis-build/build.sh
-- ./travis-build/run-tests.sh
+- ./Unity/travis-build/build.sh
+- ./Unity/travis-build/run-tests.sh
 
 after_success:
-- ./travis-build/export-unity-package.sh
+- ./Unity/travis-build/export-unity-package.sh
 
 # before_deploy:
 # - DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
