@@ -152,7 +152,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void winLevel()
     {
-        SceneManager.LoadScene("WinningScreen");
+        SceneManager.LoadScene("WinMenu");
     }
 
     public void TeleportTo(DropTile tile)

@@ -13,12 +13,12 @@ public class Win : MonoBehaviour
         {
             SceneManager.LoadScene("Level " + GameState.nexLevel);
         }else{
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("CreditMenu");
         }
     }
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Splashscreen");
+        SceneManager.LoadScene("MainMenu");
     }
 }
