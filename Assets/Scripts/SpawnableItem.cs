@@ -32,7 +32,6 @@ public class SpawnableItem : MonoBehaviour
         switch (cause)
         {
             case PLACED:
-                //TODO maybe rotate TileToSpawn
                 currentTile = GetRandomTile();
                 ApplySpriteFromMimickedTile();
                 break;
