@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HouseScene.unity
     guid: e246864a29864574f9abe914dcd7fc77
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
+    path: Assets/Scenes/Menu/CreditMenu.unity
     guid: ebd0f83cb81cfa44fb34cd9df51df5e0
   - enabled: 1
     path: Assets/Scenes/WinningScreen.unity

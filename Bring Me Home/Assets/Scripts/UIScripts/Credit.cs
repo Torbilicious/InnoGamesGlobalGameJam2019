@@ -9,13 +9,13 @@ public class Credit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("SplashScreen");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("SplashScreen");
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
