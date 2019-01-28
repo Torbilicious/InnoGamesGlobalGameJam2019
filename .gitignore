@@ -55,7 +55,7 @@ crashlytics-build.properties
 *.iml
 
 # GameJam
-ProjectSettings/ProjectVersion.txt
+.collabignore
 
 # Visual Studio Code
 .vscode/
