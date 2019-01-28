@@ -127,14 +127,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     void SetAnimation()
     {
-        if(spawn)
-        {
-            RendererRun.sprite = AnimationIdle.GetNext();
-            RendererDust.sprite = null;
-        }
-        else if (GameState.isDead)
+        if (GameState.isDead)
         {
             RendererRun.sprite = AnimationDead.GetNext();
+            RendererDust.sprite = null;
+        }
+        else if (spawn)
+        {
+            RendererRun.sprite = AnimationIdle.GetNext();
             RendererDust.sprite = null;
         }
         else
