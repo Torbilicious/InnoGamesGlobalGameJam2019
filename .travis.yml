@@ -37,3 +37,14 @@ after_success:
 #   overwrite: true
 #   on:
 #     tags: true 
+
+
+deploy:
+  provider: releases
+  api_key:
+    secure: apdzdzZQGNcsOEE2exPmi29lLgHJwiwpnoQ4S2Y3J6lvLIVSJlQbT1W8gLzZpfV+jUbXl5yBMK3K1hF7o2Fhjpc5QF80+CDs7Z+M94FehtTzsHzRuPGLqZ+R/X2s7bsRft2Of9HfHpTilhTC2i7vHDKMEiz5gdkmQf+eGEn0LyrC7B8RdsckThzbv6jSnxZpImG1GVyg0suJaq0W8oKXCD1npUQwaiTLPlL7erNX+yu4vPmTwiOX3Np0eS9kfE4aQnzVjSTXAjo7tLrIpejCD0nTc5oUzV/+VBAZZ1u0YamAYMM7C5b+UE0/xoTUm2g2xipt5xyAyOEjxkeTkEWyMvVZoWUfpr+sWcWNYFANsRWaj2kkldlbt/Z/8zStGZveSlESWB0TRydS1Dsvjqg5ABZZ4VAIR8ZakCx1o092RXD0gk90Y9DJQWAv+UkzjkvU+7MkGajB+Ra/Dpy7geWrgvfNaIYPiojnovHxdizlwoJ9F4OX/LzKWJVJTm0fuazW7Ep3H5le8K5wJ9dHDIibG1awDRKPs15dxyocP122Mikfg1EfkEwhXoX9SUuoARzqmzF7tdMLu7eHi3n1H+BONeLYGxxBN01m3dlUi361PhRMc3yeIUjcE78TtNIGRiJPBCSG87duN4hPQ8nhEpxyA04/yBZCPfMJHVt3sLwGTFE=
+  file: $DEPLOY_UNITYPACKAGE
+  skip_cleanup: true
+  overwrite: true
+  on:
+    repo: Torbilicious/InnoGamesGlobalGameJam2019
