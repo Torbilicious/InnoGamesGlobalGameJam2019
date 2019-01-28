@@ -11,6 +11,8 @@ public class Credit : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+
+
     }
 
     public void LoadMenu()
