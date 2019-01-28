@@ -1,5 +1,6 @@
 # Bring me Home (Inno Games Global Game Jam 2019)
 ![alt text](Repo_assets/Unbenanntes_Werk.png "")
+[![Build Status](https://travis-ci.org/Torbilicious/InnoGamesGlobalGameJam2019.svg?branch=master)](https://travis-ci.org/Torbilicious/InnoGamesGlobalGameJam2019)
 
 Let's find the way home, together!
 Bring me home is a Puzzle Game with an addictive road construction and turn mechanic. 
