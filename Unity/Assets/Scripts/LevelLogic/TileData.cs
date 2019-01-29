@@ -20,7 +20,7 @@ public class TileData
         InUse = false;
     }
 
-    public TileData(LevelTile tile)
+    public TileData(LevelTileX tile)
     {
         InUse = true;
         PosX = (int)tile.transform.position.x;
@@ -32,6 +32,7 @@ public class TileData
         GameObject obj = Object.Instantiate(prefab);
         obj.transform.parent = grid.transform;
         obj.transform.position = new Vector3(PosX, PosY, 0);
+        obj.GetComponent<DragableObject>().DragOnSpawn = false;
         return obj;
     }
 }

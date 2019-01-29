@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
         File.WriteAllText(GetLevelFile(), "");//TODO: Header
 
         //Find all level tiles and serialize them
-        LevelTile[] tiles = FindObjectsOfType<LevelTile>();
+        LevelTileX[] tiles = FindObjectsOfType<LevelTileX>();
         TileData[] tileData = new TileData[tiles.Length];
         for(int i = 0; i < tiles.Length; i++)
         {
