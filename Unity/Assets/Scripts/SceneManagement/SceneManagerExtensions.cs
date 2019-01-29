@@ -4,9 +4,13 @@ using UnityEngine.UI;
 
 public static class SceneManager
 {
-    public static void LoadScene(Scene scene)
+    public static Scene Scene = Scene.MENU_MAIN;
+    public static int LevelId = -1;
+
+    public static void LoadScene(Scene scene, int levelId = -1)
     {
-        AsyncSceneLoader.Scene = scene;
+        Scene = scene;
+        LevelId = levelId;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Loader");
     }
 }

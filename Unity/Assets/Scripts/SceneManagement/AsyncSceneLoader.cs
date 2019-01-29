@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AsyncSceneLoader : MonoBehaviour
 {
-    public static Scene Scene = Scene.MENU_MAIN;
+    
 
     public GameObject Loader;
 
@@ -16,7 +16,7 @@ public class AsyncSceneLoader : MonoBehaviour
     {
         string sceneKey = "";
 
-        switch (Scene)
+        switch (SceneManager.Scene)
         {
             case Scene.MENU_MAIN:
                 sceneKey = "MainMenu";
@@ -26,6 +26,9 @@ public class AsyncSceneLoader : MonoBehaviour
                 break;
             case Scene.MENU_WIN:
                 sceneKey = "WinMenu";
+                break;
+            case Scene.LEVEL:
+                sceneKey = "Level X";
                 break;
         }
 

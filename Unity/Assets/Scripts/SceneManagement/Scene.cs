@@ -7,5 +7,5 @@ public enum Scene
     MENU_MAIN,
     MENU_CREDITS,
     MENU_WIN,
-    
+    LEVEL,
 }

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using static ResetCause;
 
-public class SpawnableItem : MonoBehaviour
+public class SpawnableItem : MonoBehaviour, IPointerDownHandler
 {
     public GameObject[] TilesToSpawn;
     private GameObject currentTile;
@@ -43,13 +45,25 @@ public class SpawnableItem : MonoBehaviour
 
     private void ApplySpriteFromMimickedTile()
     {
-        GetComponent<SpriteRenderer>().sprite = currentTile.GetComponent<SpriteRenderer>().sprite;
+        if (GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = currentTile.GetComponent<SpriteRenderer>().sprite;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = currentTile.GetComponent<SpriteRenderer>().sprite;
+        }
         transform.rotation = currentTile.transform.rotation;
     }
 
     private GameObject GetRandomTile()
     {
         return TilesToSpawn[Random.Range(0, TilesToSpawn.Length)];
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        OnMouseDown();
     }
 }
 
