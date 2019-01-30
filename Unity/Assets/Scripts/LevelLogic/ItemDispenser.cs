@@ -65,6 +65,7 @@ public class ItemDispenser : MonoBehaviour, IPointerDownHandler
 
     private void DispensedItemStopped(DragEventArgs args)
     {
+        _spawnedItem.OnDragStopPostProcess.RemoveListener(DispensedItemStopped);
         Reset(_spawnedItem.DragSuccessful);
     }
 }

@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
         TileData[] tileData = new TileData[tiles.Length];
         for(int i = 0; i < tiles.Length; i++)
         {
-            tileData[i] = new TileData(tiles[i]);
+            tileData[i] = tiles[i].GetTileData();
         }
         //Save level tiles
         SaveObjectToFile(tileData, "tiles");
@@ -78,6 +78,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevelFromFile()
     {
+        TileGrid.transform.RemoveAllChildren();
         if (File.Exists(GetLevelFile()))
         {
             TileData[] tileData = (TileData[])LoadObjectFromFile(typeof(TileData[]), "tiles");
