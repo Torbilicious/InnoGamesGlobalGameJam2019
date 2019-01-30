@@ -39,9 +39,14 @@ public partial class LevelTileX : MonoBehaviour
     void Update()
     {
         //Editor stuff
-        if(Input.GetMouseButtonDown(1) && _mouseOver)
+        if(Input.GetMouseButtonDown(1) && _mouseOver && LevelManager.EditorEnabled)
         {
             Editor.SetActive(!Editor.activeSelf);
+        }
+        if(Editor.activeSelf)
+        {
+            Editor.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(transform.lossyScale.x * 1.5f, 0, 0));
+            Editor.transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
         if ((_synchronizationTimer -= Time.deltaTime) < 0)
@@ -97,7 +102,18 @@ public partial class LevelTileX : MonoBehaviour
 
     public void OnDragStop(DragEventArgs args)
     {
-        if (_collidesWithOtherLevelTile &&
+        TileDropper dropper = GetComponent<TileDropper>();
+        if (dropper.enabled && _collidesWithOtherLevelTile)
+        {
+            LevelTileX existingTile = _lastCollider.gameObject.GetComponent<LevelTileX>();
+            _data = existingTile._data;
+            Destroy(existingTile.gameObject);
+            _collidesWithOtherLevelTile = false;
+            _data.TileType = dropper.TileType;
+            _data.Rotation = dropper.Rotation;
+            _collidesWithOtherLevelTile = false;
+        }
+        else if (_collidesWithOtherLevelTile &&
             ((int)_lastCollider.gameObject.transform.position.x != (int)this.gameObject.transform.position.x ||
             (int)_lastCollider.gameObject.transform.position.y != (int)this.gameObject.transform.position.y))
         {

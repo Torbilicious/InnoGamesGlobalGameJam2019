@@ -8,14 +8,21 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public static bool EditorEnabled => _editorEnabled;
+
     private const int MAX_LEVEL_SIZE = 100;
 
     private string _dataPath;
+
+    private static bool _editorEnabled = false;
 
     public GameObject LevelTilePrefab;
     public GameObject TileGrid;
 
     public InputField LevelIdInput;
+
+    public GameObject EditorUI;
+    public GameObject GameUI;
 
     void Start()
     {
@@ -29,7 +36,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            _editorEnabled = !_editorEnabled;
+        }
+        EditorUI.SetActive(_editorEnabled);
+        GameUI.SetActive(!_editorEnabled);
     }
 
     public void ChangeLevelID()

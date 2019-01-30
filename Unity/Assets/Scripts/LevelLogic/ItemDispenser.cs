@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 public class ItemDispenser : MonoBehaviour, IPointerDownHandler
 {
-    public DragableObject[] ItemsToSpawn;
+    public DragableObject TileTemplate;
+
+    public TileDropper[] TileSettings;
 
     public Transform SpawnInto;
 
-    private DragableObject _currentItem;
+    private TileDropper _currentItem;
     private DragableObject _spawnedItem;
 
     private void Start()
@@ -19,7 +21,9 @@ public class ItemDispenser : MonoBehaviour, IPointerDownHandler
 
     void OnMouseDown()
     {
-        _spawnedItem = Instantiate(_currentItem, gameObject.transform, true);
+        _spawnedItem = Instantiate(TileTemplate, gameObject.transform, true);
+        _spawnedItem.GetComponent<TileDropper>().TileType = _currentItem.TileType;
+        _spawnedItem.GetComponent<TileDropper>().Rotation = _currentItem.Rotation;
         _spawnedItem.OnDragStopPostProcess.AddListener(DispensedItemStopped);
         _spawnedItem.transform.parent = SpawnInto;
         gameObject.SetActive(false);
@@ -30,20 +34,20 @@ public class ItemDispenser : MonoBehaviour, IPointerDownHandler
         OnMouseDown();
     }
 
-    private DragableObject GetRandomItem()
+    private TileDropper GetRandomItem()
     {
-        return ItemsToSpawn[Random.Range(0, ItemsToSpawn.Length)];
+        return TileSettings[Random.Range(0, TileSettings.Length)];
     }
 
     private void ApplySpriteFromMimickedItem()
     {
         if (GetComponent<SpriteRenderer>() != null)
         {
-            GetComponent<SpriteRenderer>().sprite = _currentItem.GetComponent<SpriteRenderer>().sprite;
+            GetComponent<SpriteRenderer>().sprite = TileAttribute.GetSpriteFromTileType(_currentItem.TileType);
         }
         else
         {
-            GetComponent<Image>().sprite = _currentItem.GetComponent<SpriteRenderer>().sprite;
+            GetComponent<Image>().sprite = TileAttribute.GetSpriteFromTileType(_currentItem.TileType);
         }
         transform.rotation = _currentItem.transform.rotation;
     }

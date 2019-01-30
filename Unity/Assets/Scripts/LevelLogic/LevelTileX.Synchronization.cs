@@ -81,10 +81,7 @@ public partial class LevelTileX : MonoBehaviour
         Portal.gameObject.SetActive(_data.IsPortal || _data.IsPortalExit);
         Portal.IsExit = _data.IsPortalExit;
         
-        Vector3 ePos = Editor.transform.position;
         transform.eulerAngles = new Vector3(0, 0, _data.Rotation);
-        Editor.transform.position = ePos;
-        Editor.transform.eulerAngles = new Vector3(0, 0, 0);
 
         SpriteRenderer.sprite = TileAttribute.GetSpriteFromTileType(_data.TileType);
         GameMechanic.Directions = TileAttribute.GetDirectionsFromTileType(_data.TileType);
@@ -93,6 +90,8 @@ public partial class LevelTileX : MonoBehaviour
     private void SynchronizeUI()
     {
         //editor ui update
+        transform.Find("LevelTileEditor/Editor/Type/Dropdown").GetComponent<Dropdown>().value = (int)_data.TileType;
+        transform.Find("LevelTileEditor/Editor/Rotation/Dropdown").GetComponent<Dropdown>().value = (int)(_data.Rotation / 90.0f);
         transform.Find("LevelTileEditor/Editor/IsPortal").GetComponent<Toggle>().isOn = _data.IsPortal;
         transform.Find("LevelTileEditor/Editor/IsPortal").GetComponent<Toggle>().interactable = !_data.IsPortalExit;
         transform.Find("LevelTileEditor/Editor/IsPortalExit").GetComponent<Toggle>().isOn = _data.IsPortalExit;
