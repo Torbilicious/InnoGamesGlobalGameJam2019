@@ -4,6 +4,18 @@ using UnityEngine.UI;
 
 public partial class LevelTileX : MonoBehaviour
 {
+    public void OnTypeChanged(Dropdown dropdown)
+    {
+        _data.TileType = (TileType)dropdown.value;
+        SynchronizeData();
+    }
+
+    public void OnRotationChanged(Dropdown dropdown)
+    {
+        _data.Rotation = dropdown.value * 90.0f;
+        SynchronizeData();
+    }
+
     public void OnIsPortalChanged(Toggle change)
     {
         _data.IsPortal = change.isOn;

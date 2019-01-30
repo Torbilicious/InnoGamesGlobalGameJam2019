@@ -19,6 +19,12 @@ public partial class LevelTileX : MonoBehaviour
 
     public Portal Portal;
 
+    public LevelTileGameMechanics GameMechanic;
+
+    public DragableObject DragMechanic;
+
+    public SpriteRenderer SpriteRenderer;
+
     public LevelTileX()
     {
         _data = new TileData();
@@ -98,16 +104,14 @@ public partial class LevelTileX : MonoBehaviour
             _collidesWithOtherLevelTile = false;
         }
 
-        GetComponent<DragableObject>().DragSuccessful = !_collidesWithOtherLevelTile;
+        DragMechanic.DragSuccessful = !_collidesWithOtherLevelTile;
 
         if (!_collidesWithOtherLevelTile)
         {
             _data.PosX = (int)transform.position.x;
             _data.PosY = (int)transform.position.y;
-            GetComponent<DragableObject>().enabled = false;
+            DragMechanic.enabled = false;
             SynchronizeData();
         }
     }
-
-
 }

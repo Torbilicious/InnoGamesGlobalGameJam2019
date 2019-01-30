@@ -80,13 +80,14 @@ public partial class LevelTileX : MonoBehaviour
 
         Portal.gameObject.SetActive(_data.IsPortal || _data.IsPortalExit);
         Portal.IsExit = _data.IsPortalExit;
-        transform.rotation.Set(0, 0, _data.Rotation, 0);
+        
+        Vector3 ePos = Editor.transform.position;
+        transform.eulerAngles = new Vector3(0, 0, _data.Rotation);
+        Editor.transform.position = ePos;
+        Editor.transform.eulerAngles = new Vector3(0, 0, 0);
 
-        switch (_data.TileType)
-        {
-            case TileType.EMPTY:
-                break;
-        }
+        SpriteRenderer.sprite = TileAttribute.GetSpriteFromTileType(_data.TileType);
+        GameMechanic.Directions = TileAttribute.GetDirectionsFromTileType(_data.TileType);
     }
 
     private void SynchronizeUI()
