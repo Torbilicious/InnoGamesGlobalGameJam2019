@@ -13,6 +13,7 @@ public class TileData
     /// Defines if the tile is in use
     /// </summary>
     [DataMember]
+    [DispenserOverride]
     public bool InUse = false;
 
     /// <summary>
@@ -51,10 +52,17 @@ public class TileData
     public TileData PortalTarget;
 
     [DataMember]
+    [DispenserOverride]
     public float Rotation;
 
     [DataMember]
+    [DispenserOverride]
     public TileType TileType;
+
+    /// <summary>
+    /// Defines if the tile is used a a dispenser for another tile.
+    /// </summary>
+    public bool IsDispenser;
 
     public TileData()
     {
@@ -63,6 +71,7 @@ public class TileData
         PortalTarget = null;
         Rotation = 0.0f;
         TileType = TileType.EMPTY;
+        IsDispenser = false;
     }
 
     public GameObject Instantiate(GameObject prefab, GameObject grid)

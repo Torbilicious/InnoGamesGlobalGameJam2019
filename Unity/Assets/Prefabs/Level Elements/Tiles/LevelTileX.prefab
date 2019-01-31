@@ -1471,7 +1471,6 @@ GameObject:
   - component: {fileID: 2960477070740633763}
   - component: {fileID: 2960477070740633762}
   - component: {fileID: 8622579115193593455}
-  - component: {fileID: 852878973006635658}
   m_Layer: 0
   m_Name: LevelTileX
   m_TagString: Tile
@@ -1673,20 +1672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Directions: 0
---- !u!114 &852878973006635658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960477070740633760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2308cfeac268c4349b56d6b32f603cc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TileType: 0
-  Rotation: 0
 --- !u!1 &3156105031963761238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +4059,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
+        type: 3}
+      propertyPath: EntryAnimation
+      value: 
+      objectReference: {fileID: 8670137507027189810}
+    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
+        type: 3}
+      propertyPath: ExitAnimation
+      value: 
+      objectReference: {fileID: 8670137507027189811}
+    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
+        type: 3}
+      propertyPath: Renderer
+      value: 
+      objectReference: {fileID: 8670137507027189809}
     - target: {fileID: 825808617247339857, guid: b45261d3b40c7cc4aa847d104b6d2257,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4129,35 +4129,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
-        type: 3}
-      propertyPath: EntryAnimation
-      value: 
-      objectReference: {fileID: 8670137507027189810}
-    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
-        type: 3}
-      propertyPath: ExitAnimation
-      value: 
-      objectReference: {fileID: 8670137507027189811}
-    - target: {fileID: 3454742524075653250, guid: b45261d3b40c7cc4aa847d104b6d2257,
-        type: 3}
-      propertyPath: Renderer
-      value: 
-      objectReference: {fileID: 8670137507027189809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45261d3b40c7cc4aa847d104b6d2257, type: 3}
---- !u!114 &8670137507027189810 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 825808617247339859, guid: b45261d3b40c7cc4aa847d104b6d2257,
-    type: 3}
-  m_PrefabInstance: {fileID: 8297698350172370273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8670137507027189808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 825808617247339857, guid: b45261d3b40c7cc4aa847d104b6d2257,
@@ -4173,6 +4146,18 @@ SpriteRenderer:
 --- !u!114 &8670137507027189811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 825808617247339858, guid: b45261d3b40c7cc4aa847d104b6d2257,
+    type: 3}
+  m_PrefabInstance: {fileID: 8297698350172370273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c448ccf42adaa3443a5b659d0aa2bf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8670137507027189810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 825808617247339859, guid: b45261d3b40c7cc4aa847d104b6d2257,
     type: 3}
   m_PrefabInstance: {fileID: 8297698350172370273}
   m_PrefabAsset: {fileID: 0}

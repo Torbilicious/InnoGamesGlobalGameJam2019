@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,7 +42,7 @@ public class LevelManager : MonoBehaviour
             _editorEnabled = !_editorEnabled;
         }
         EditorUI.SetActive(_editorEnabled);
-        GameUI.SetActive(!_editorEnabled);
+        //GameUI.SetActive(!_editorEnabled);
     }
 
     public void ChangeLevelID()
@@ -68,6 +69,17 @@ public class LevelManager : MonoBehaviour
         SaveObjectToFile(tileData, "tiles");
 
         Debug.Log("Level Layout saved!");
+
+        //Save Dispenser Items
+        ItemDispenser[] dispenser = Resources.FindObjectsOfTypeAll<ItemDispenser>().Where(d => d.Save == true).ToArray();
+        DispenserData[] dispenserData = new DispenserData[dispenser.Length];
+        for(int i = 0; i < dispenser.Length; i++)
+        {
+            dispenserData[i] = dispenser[i].GetDispenserData();
+        }
+        SaveObjectToFile(dispenserData, "dispenser");
+
+        Debug.Log("Dispenser data saved!");
     }
 
     private void SaveObjectToFile(object obj, string suffix)
@@ -81,10 +93,7 @@ public class LevelManager : MonoBehaviour
 
         FileStream file = File.Create(targetPath, 1024, FileOptions.None);
         DataContractSerializer bf = new DataContractSerializer(obj.GetType());
-        //MemoryStream streamer = new MemoryStream();
         bf.WriteObject(file, obj);
-        //streamer.Seek(0, SeekOrigin.Begin);
-        //file.Write(streamer.GetBuffer(), 0, streamer.GetBuffer().Length);
         file.Close();
     }
 
@@ -97,6 +106,13 @@ public class LevelManager : MonoBehaviour
             foreach (TileData tile in tileData)
             {
                 tile.Instantiate(LevelTilePrefab, TileGrid);
+            }
+
+            DispenserData[] dispenserData = (DispenserData[])LoadObjectFromFile(typeof(DispenserData[]), "dispenser");
+            ItemDispenser[] dispenser = Resources.FindObjectsOfTypeAll<ItemDispenser>().Where(d => d.Save == true).ToArray();
+            for (int i = 0; i < dispenser.Length && i < dispenserData.Length; i++)
+            {
+                 dispenser[i].SetDispenserData(dispenserData[i]);
             }
         }
     }
